@@ -9,9 +9,9 @@
     line-height: 1.33;
     justify-self: start;
     align-self: end;
-    text-overflow: ellipsis;   
-    white-space: nowrap;   
-    overflow: hidden
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 
