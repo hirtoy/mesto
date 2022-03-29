@@ -1,0 +1,11 @@
+.cards__item {
+    max-width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: start;
+    grid-template-columns: 1fr 70px;
+    color: black;
+    background-image: linear-gradient(to bottom, black, black 10%, white 10%, white 100%);
+    border-radius: 13px;
+    overflow: hidden;
+}

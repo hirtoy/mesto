@@ -1,0 +1,28 @@
+.profile__btn-add{
+    grid-area: add;
+    background: none;
+    background-image: url(../../../images/btn-add-plus.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid white;
+    border-radius: 2px;
+    background-size: 22px 22px;
+    justify-self: end;
+    align-self: center;
+    width: 150px;
+    height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__btn-add  {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .profile__btn-add  {
+        width: 100%;
+        margin-top: 40px;
+        justify-self: start;
+    }
+}
