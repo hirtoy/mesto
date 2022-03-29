@@ -1,0 +1,8 @@
+@import url(./__button/page__button.css);
+
+.page {
+    background-color: black;
+    font-family: 'Inter', 'Arial', sans-serif;
+    color:white;
+    box-sizing: border-box;
+}
