@@ -1,7 +1,7 @@
-.profile__btn-add{
+.profile__add{
     grid-area: add;
     background: none;
-    background-image: url(../../../images/btn-add-plus.svg);
+    background-image: url(../../../images/add-plus.svg);
     background-repeat: no-repeat;
     background-position: center;
     border: 2px solid white;
@@ -14,13 +14,13 @@
 }
 
 @media screen and (max-width: 768px) {
-    .profile__btn-add  {
+    .profile__add  {
         width: 50px;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .profile__btn-add  {
+    .profile__add  {
         width: 100%;
         margin-top: 40px;
         justify-self: start;

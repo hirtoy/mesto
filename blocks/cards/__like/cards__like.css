@@ -1,8 +1,8 @@
-.cards__btn-like {
+.cards__like {
     grid-column: 2/3;
     margin-left: 20px;
     align-self: stretch;
-    background-image: url(../../../images/btn-like-heart.svg);
+    background-image: url(../../../images/like-heart.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -11,6 +11,6 @@
     background-color: white;
 }
 
-.cards__btn-like:focus {
+.cards__like:focus {
     outline: none;
 }
