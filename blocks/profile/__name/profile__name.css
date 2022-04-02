@@ -1,5 +1,6 @@
 .profile__name{
-    max-width: 100%;
+    max-width: 294px;
+    min-height: 39px;
     grid-area: name;
     margin: 0;
     padding: 0;

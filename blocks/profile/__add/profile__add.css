@@ -9,8 +9,8 @@
     background-size: 22px 22px;
     justify-self: end;
     align-self: center;
-    width: 150px;
-    height: 50px;
+    min-width: 150px;
+    min-height: 50px;
 }
 
 @media screen and (max-width: 768px) {
