@@ -9,14 +9,14 @@ let profileNameInput = document.querySelector('.popup__input_type_name');
 let profileJobInput = document.querySelector('.popup__input_type_job');
 
 function popupOpen() {
-    popup.classList.add('popup__opened');
+    popup.classList.add('popup_opened');
     profileNameInput.value = profileName.textContent.trim();
     profileJobInput.value = profileJob.textContent.trim();
 
 }
 
 function popupClose() {
-    popup.classList.remove('popup__opened');
+    popup.classList.remove('popup_opened');
 }
 
 function formSubmitHandler (evt) {
