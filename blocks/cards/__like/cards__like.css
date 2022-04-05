@@ -1,13 +1,13 @@
 .cards__like {
     grid-column: 2/3;
-    margin-left: 20px;
-    align-self: stretch;
+    margin: 31px 20px auto auto;
+    align-self: center;
     background-image: url(../../../images/like-heart.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 20px;
-    padding: 0;
+    width: 22px;
+    height: 19px;
     border: none;
     background-color: white;
 }

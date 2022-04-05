@@ -9,6 +9,3 @@
     align-items: center;
     justify-content: center;
 }
-.popup__opened {
-    display: flex;
-}
