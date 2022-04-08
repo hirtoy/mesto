@@ -1,6 +1,5 @@
 .cards__like {
     grid-column: 2/3;
-    margin: 31px 20px auto auto;
     align-self: center;
     background-image: url(../../../images/like-heart.svg);
     background-position: center;
