@@ -1,0 +1,13 @@
+.profile__edit-button {
+    width: 24px;
+    height: 24px;
+    background: url(../../../images/edit-pencil.svg) center no-repeat;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.profile__edit-button:hover { 
+    opacity: 0.6;
+    cursor: pointer;
+}

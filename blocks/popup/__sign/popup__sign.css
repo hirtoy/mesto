@@ -1,0 +1,11 @@
+.popup__sign {
+    color: #fff;
+    margin: 10px 0 0 0;
+    max-width: 291px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
