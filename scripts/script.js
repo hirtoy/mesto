@@ -16,13 +16,10 @@ const addBtn = document.querySelector('.profile__add-button');
 
 const photoModal = document.querySelector('.popup_photo');
 const photoImage = photoModal.querySelector('.popup__image');
-const btnCloseModal = photoModal.querySelector('.popup_button');
+const btnCloseModal = photoModal.querySelector('popup_button');
 const altModal = photoModal.querySelector('.popup__sign');
 
 const elementsSection = document.querySelector('.elements');
-
-
-
 
 const initialCards = [
   {
@@ -51,19 +48,13 @@ const initialCards = [
   }
 ];
 
-
-
-
-
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
 
-
 function openPopup(popup) {
   popup.classList.add('popup_opened');
 }
-
 
 function handlePopupEdit() {
   nameInput.value = nameInfo.textContent;
@@ -71,17 +62,13 @@ function handlePopupEdit() {
   openPopup(editPopup);
 }
 
-
 function handleDeleteCard(evt) {
   evt.target.closest('.element').remove();
 }
 
-
-
 function handleLikeCard(evt) {
   evt.target.classList.toggle('.element__like_active');
 }
-
 
 function handleProfileSubmit(evt) {
   evt.preventDefault();
@@ -89,8 +76,6 @@ function handleProfileSubmit(evt) {
   jobInfo.textContent = jobInput.value;
   closePopup(editPopup);
 }
-
-
 
 function createCard(item) {
   const templateElement = document.querySelector('#template-element').content;
@@ -111,7 +96,6 @@ function createCard(item) {
   return newElement;
 }
 
-
 function renderList() {
   const result = initialCards.map(item => {
     const newElement = createCard(item);
@@ -119,8 +103,6 @@ function renderList() {
   });
   elementsSection.append(...result);
 }
-
-
 
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
@@ -130,15 +112,12 @@ function handleAddCardFormSubmit(evt) {
   formAdd.reset();
 }
 
-
 function handlePreviewImage(link, alt) {
   photoImage.src = link;
   photoImage.alt = alt;
   altModal.textContent = alt;
   openPopup(photoModal);
 }
-
-
 
 renderList();
 

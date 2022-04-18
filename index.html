@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
   <title>Место</title>
@@ -10,6 +11,7 @@
   <header class="header">
     <img src="./images/logo.svg" alt="Проект Место" class="header__logo">
   </header>
+
   <main class="content">
     <section class="profile">
         <img class="profile__picture" src="./images/jacques-yves_cousteau.png" alt="Фото Жак-Ив Кусто">
@@ -43,7 +45,7 @@
 
     <div class="popup popup_card">
       <div class="popup__content">
-          <button class="popup__close" id="popup__close_card" type="button"></button>
+          <button class="popup__close-button" id="popup__close_card" type="button"></button>
           <h2 class="popup__title">Новое место</h2>
           <form class="popup__form popup__form_card" action="#" name="cardForm">
               <input class="popup__form-input popup__form-input_type_name" type="text" name="cardName" placeholder="Новое место" value="">
@@ -55,7 +57,7 @@
 
     <div class="popup popup_photo">
         <div class="popup__box">
-          <button class="popup__close-button" type="button"></button>
+          <button class="popup__close-button popup__button" type="button"></button>
           <img class="popup__image" alt="#" src="#">
           <p class="popup__sign"></p>
         </div>
