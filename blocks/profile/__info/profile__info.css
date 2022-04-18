@@ -9,11 +9,10 @@
     align-self: center;
   }
   
-  
-  @media screen and (max-width: 900px) {
-    .profile__info {
-      margin: 0 auto;
-      justify-content: center;
-      max-width: 280px;
-    }
+@media screen and (max-width: 900px) {
+  .profile__info {
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 280px;
   }
+}
