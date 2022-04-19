@@ -11,7 +11,7 @@ const popupAdd = document.querySelector('.popup_card');
 const formAdd = popupAdd.querySelector('.popup__form_card');
 const inputPlace = popupAdd.querySelector('.popup__form-input_type_name');
 const inputUrl = popupAdd.querySelector('.popup__form-input_type_url');
-const closePopupAdd = document.querySelector('#popup__close_card');
+const buttonClosePopupAdd = document.querySelector('#popup__close_card');
 const addBtn = document.querySelector('.profile__add-button');
 
 const photoModal = document.querySelector('.popup_photo');
@@ -123,7 +123,7 @@ renderList();
 
 editBtn.addEventListener('click', handlePopupEdit);
 addBtn.addEventListener('click', () => openPopup(popupAdd));
-closePopupAdd.addEventListener('click', () => closePopup(popupAdd));
+buttonClosePopupAdd.addEventListener('click', () => closePopup(popupAdd));
 formAdd.addEventListener('submit', handleAddCardFormSubmit);
 formEdit.addEventListener('submit', handleProfileSubmit);
 closeBtn.addEventListener('click', () => closePopup(editPopup));
