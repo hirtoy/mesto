@@ -11,7 +11,7 @@ const popupAdd = document.querySelector('.popup_card');
 const formAdd = popupAdd.querySelector('.popup__form_card');
 const inputPlace = popupAdd.querySelector('.popup__form-input_type_name');
 const inputUrl = popupAdd.querySelector('.popup__form-input_type_url');
-const closePopupAdd = document.querySelector('.popup__close_card');
+const closePopupAdd = document.querySelector('#popup__close_card');
 const addBtn = document.querySelector('.profile__add-button');
 
 const photoModal = document.querySelector('.popup_photo');
@@ -49,11 +49,11 @@ const initialCards = [
 ];
 
 function closePopup(popup) {
-  popup.classList.remove('popup_opened');
+  popup.classList.remove('popup_visible');
 }
 
 function openPopup(popup) {
-  popup.classList.add('popup_opened');
+  popup.classList.add('popup_visible');
 }
 
 function handlePopupEdit() {
@@ -67,7 +67,7 @@ function handleDeleteCard(evt) {
 }
 
 function handleLikeCard(evt) {
-  evt.target.classList.toggle('.element__like_active');
+  evt.target.classList.toggle('element__like_active');
 }
 
 function handleProfileSubmit(evt) {

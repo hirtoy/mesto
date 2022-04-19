@@ -3,6 +3,7 @@
     height: 282px;
     object-fit: cover;
     transition: .3;
+    display: flex;
 }
 
 .element__image:hover {
