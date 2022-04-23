@@ -25,7 +25,7 @@ const initialCards = [
 	},
   ];
 
-const editButtonNode = document.querySelector(".profile__edit-button");
+const profileEditButtonNode = document.querySelector(".profile__edit-button");
 const profileEditorNode = document.getElementById("profile-editor");
 const popup = document.querySelectorAll(".popup");
 const imagePopupNode = document.getElementById("image-viewer");
@@ -37,7 +37,7 @@ const popupNameInput = document.querySelector(".popup__form-item_value_name");
 const popupDescriptionInput = document.querySelector(".popup__form-item_value_description");
 const popupPlaceNameNode = document.querySelector(".popup__form-item_value_place-name");
 const popupPlaceUrlNode = document.querySelector(".popup__form-item_value_place-url");
-const addButtonNode = document.getElementById("element__add-button");
+const elementAddButtonNode = document.getElementById("element__add-button");
 const popupPlaceEditorNode = document.getElementById("place-editor");
 const placeEditorCloseButtonNode = document.getElementById("place__editor_close-button");
 const createButtonNode = document.getElementById("popup__submit-button_place_elements");
@@ -103,7 +103,7 @@ function deleteElement(event) {
 	event.target.closest(".element").remove();
 }
 
-editButtonNode.addEventListener("click", (event) => {
+profileEditButtonNode.addEventListener("click", (event) => {
 	popupNameInput.value = profileNameNode.textContent;
 	popupDescriptionInput.value = profileDescriptionNode.textContent;
 	openPopUp(profileEditorNode);
@@ -143,9 +143,9 @@ function handleEditButtonClick() {
 	popupDescriptionInput.value = profileDescriptionNode.textContent;
 }
 
-editButtonNode.addEventListener("click", handleEditButtonClick);
+profileEditButtonNode.addEventListener("click", handleEditButtonClick);
 
-addButtonNode.addEventListener("click", handleAddButtonClick);
+elementAddButtonNode.addEventListener("click", handleAddButtonClick);
 
 function handleAddButtonClick() {
 	openPopUp(popupPlaceEditorNode);
@@ -173,7 +173,7 @@ function renderList() {
 
 function handleOverlayClick(event) {
 	if (event.target.classList.contains("popup")) {
-		const openedPopUp = document.querySelector(".popup_visible");
+		const openedPopUp = document.querySelector("popup");
 		closePopUp(openedPopUp);
 	}
 }

@@ -1,5 +1,5 @@
 .popup__window_place_elements {
-	width: 240px;
+	min-width: 330px;
 	border: none;
 }
 

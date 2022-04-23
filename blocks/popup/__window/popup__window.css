@@ -1,5 +1,5 @@
 .popup__window {
-	width: 282px;
+	min-width: 330px;
 	border: 1px solid rgba(0, 0, 0, 1);
 	border-radius: 10px;
 	background-color: #ffffff;
