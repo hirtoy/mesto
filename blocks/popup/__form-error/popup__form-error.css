@@ -1,0 +1,22 @@
+.popup__form-error {
+	font-family: "Inter", Arial, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	padding: 0;
+	color: #ff0000;
+	width: 238px;
+	margin: 6px 0 13px;
+}
+
+.popup__form-error:last-of-type {
+	margin-bottom: 31.34px;
+}
+
+@media screen and (min-width: 768px) {
+	.popup__form-error {
+		margin: 6px auto 13px;
+		width: 358px;
+	}
+}

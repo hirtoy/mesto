@@ -1,0 +1,10 @@
+.popup__window_place_elements {
+	width: 240px;
+	border: none;
+}
+
+@media screen and (min-width: 768px) {
+	.popup__window_place_elements {
+		width: 430px;
+	}
+}

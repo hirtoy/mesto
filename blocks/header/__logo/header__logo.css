@@ -1,23 +1,17 @@
 .header__logo {
-  max-width: 142px;
-  max-height: 33px;
-  margin-bottom: 41px;
+	background-image: url(../../../images/header__logo.svg);
+	width: 103.74px;
+	height: 24.4px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-left: 27px;
+	padding-bottom: 31.6px;
 }
 
-
-@media screen and (max-width: 620px) {
-  .header__logo {
-      width: 122px;
-      height: 29px;
-      margin-bottom: 30px;
-  }
-}
-
-
-@media screen and (max-width: 380px) {
-  .header__logo {
-      width: 100px;
-      height: 25px;
-      padding-left: 20px;
-  }
+@media screen and (min-width: 1024px) {
+	.header__logo {
+		width: 142px;
+		height: 33px;
+		margin-left: 0px;
+	}
 }
