@@ -40,7 +40,7 @@ const popupPlaceUrlNode = document.querySelector(".popup__form-item_value_place-
 const elementAddButtonNode = document.getElementById("element__add-button");
 const popupPlaceEditorNode = document.getElementById("place-editor");
 const placeEditorCloseButtonNode = document.getElementById("place__editor_close-button");
-const createButtonNode = document.getElementById("popup__submit-button_place_elements");
+const popupCreateButtonNode = document.getElementById("popup__submit-button_place_elements");
 const placesContainerElement = document.querySelector(".elements");
 const templateElement = document.querySelector(".template");
 
@@ -87,7 +87,7 @@ function addElement(event) {
 	const newPlace = createElement({ name: placeName, link: placeUrl });
 	placesContainerElement.prepend(newPlace);
 	popupPlaceEditorForm.reset();
-	setButtonState(createButtonNode, false, validationConfig);
+	setButtonState(popupCreateButtonNode, false, validationConfig);
 	closePopUp(popupPlaceEditorNode);
 }
 
@@ -154,8 +154,9 @@ function handleAddButtonClick() {
 function openImagePopup(e) {
 	openPopUp(imagePopupNode);
 	image.src = e.target.src;
-	imageSubtitle.textContent = e.target.alt;
+	image.alt = e.target.alt;
 }
+
 
 popUpProfileSubmitButtonNode.addEventListener("click", handleProfileFormSubmit);
 
@@ -173,8 +174,7 @@ function renderList() {
 
 function handleOverlayClick(event) {
 	if (event.target.classList.contains("popup")) {
-		const openedPopUp = document.querySelector("popup");
-		closePopUp(openedPopUp);
+		closePopUp(event.target);
 	}
 }
 

@@ -8,6 +8,7 @@
 	color: #ff0000;
 	width: 238px;
 	margin: 6px 0 13px;
+	position: sticky;
 }
 
 .popup__form-error:last-of-type {
