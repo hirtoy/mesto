@@ -5,8 +5,8 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
-	width: 20px;
-	height: 20px;
+	width: 26px;
+	height: 26px;
 	position: absolute;
 	top: -40px;
 	right: 0px;
@@ -20,8 +20,8 @@
 
 @media screen and (min-width: 1024px) {
 	.popup__close-button {
-		width: 20px;
-		height: 20px;
+		width: 40px;
+		height: 40px;
 		top: -35px;
 		right: -40px;
 		padding: 0;

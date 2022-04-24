@@ -1,14 +1,16 @@
 .profile__description {
 	text-align: justify;
 	margin: 0;
-	min-width: 250px;
+	width: 318px;
 	padding-top: 14px;
 	padding-bottom: 36px;
 	font-size: 14px;
 	line-height: 17px;
 	font-style: normal;
-  word-break:break-all;
-  overflow: hidden;
+    word-break:break-all;
+    overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 @media screen and (min-width: 1024px) {
@@ -17,11 +19,9 @@
 		text-align: left;
 		font-size: 18px;
 		line-height: 22px;
-    min-width: 200px;
+        width: 318px;
 		overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-		text-overflow: ellipsis;
+       -webkit-line-clamp: 1;
+       -webkit-box-orient: vertical;
 	}
 }
