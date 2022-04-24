@@ -1,12 +1,12 @@
 .profile__info {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 767px) {
 	.profile__info {
-    flex-direction: row;
+	flex-direction: column;
+    max-width: 100%;
 	}
 }

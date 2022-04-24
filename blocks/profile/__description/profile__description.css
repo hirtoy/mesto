@@ -1,27 +1,19 @@
 .profile__description {
-	text-align: justify;
-	margin: 0;
-	width: 318px;
-	padding-top: 14px;
-	padding-bottom: 36px;
-	font-size: 14px;
-	line-height: 17px;
-	font-style: normal;
-    word-break:break-all;
-    overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+    margin: 0;
+    grid-area: subtitle;
+    font-size: 18px;
+    line-height: 22px;
+    max-width: 318px;
+	word-break:break-all; 
+    overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis; 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 767px) {
 	.profile__description {
-		padding-top: 16px;
-		text-align: left;
-		font-size: 18px;
-		line-height: 22px;
-        width: 318px;
-		overflow: hidden;
-       -webkit-line-clamp: 1;
-       -webkit-box-orient: vertical;
+		font-size: 14px;
+		line-height: 17px;
+		text-align: center;
 	}
 }

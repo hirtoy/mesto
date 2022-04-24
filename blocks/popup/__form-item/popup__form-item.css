@@ -1,19 +1,12 @@
 .popup__form-item {
 	color: #000000;
 	font-family: "Inter", Arial, sans-serif;
-	display: block;
+    display: block;
     padding: 13px 0 0;
-    margin: 0 0 20px;
+	margin: 0 0 20px;
     width: 100%;
     font-size: 14px;
     line-height: 17px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-@media screen and (min-width: 1024px) {
-	.popup__form-item {
-		width: 358px;
-		margin-bottom: 0px;
-	}
 }

@@ -1,7 +1,7 @@
 .popup__window {
     position: relative;
-    width: 100%;
-    max-width: 430px;
+    width: 430px;
+	height: 330px;
     color: #000;
     background: #fff;
     padding: 36px;
