@@ -1,5 +1,5 @@
 .profile__description {
-	text-align: justify; 
+	text-align: justify;
 	margin: 0;
 	min-width: 250px;
 	padding-top: 14px;
@@ -21,7 +21,7 @@
 		overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;  
+    -webkit-box-orient: vertical;
 		text-overflow: ellipsis;
 	}
 }
