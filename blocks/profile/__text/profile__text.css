@@ -1,9 +1,7 @@
 .profile__text {
 	display: grid;
     grid-template-columns: 1fr min-content;
-    grid-template-areas:
-        "title button"
-        "subtitle .";
+    grid-template-areas:"title button" "subtitle";
     column-gap: 18px;
     row-gap: 16px;
     align-items: center;
