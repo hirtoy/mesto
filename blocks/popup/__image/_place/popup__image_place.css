@@ -1,4 +1,4 @@
-.popup_place_photos {
+.popup__image_place {
 	border-radius: 0;
 	border: none;
 	background-color: transparent;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (min-width: 768px) {
-	.popup_place_photos {
+	.popup__image_place {
 		max-width: 816px;
 		max-height: 540px;
 	}
