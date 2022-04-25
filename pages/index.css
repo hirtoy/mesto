@@ -41,12 +41,12 @@
 @import url("../blocks/popup/__heading/_place/popup__heading_place_elements.css");
 
 @import url("../blocks/popup/__image/popup__image.css");
-@import url("../blocks/popup/__image/_place/popup__image_place.css");
 @import url("../blocks/popup/__image-subtitle/popup__image-subtitle.css");
 
 @import url("../blocks/popup/__close-button/popup__close-button.css");
 
-@import url("../blocks/popup/_place/popup_place.css");
+@import url("../blocks/popup/__photos/_place/popup__photos_place.css");
+@import url("../blocks/popup/__photos/popup__photos.css");
 
 @import url("../blocks/popup/__submit-button/_invalid/popup__submit-button_invalid.css");
 @import url("../blocks/popup/__submit-button/_place/popup__submit-button_place_elements.css");
