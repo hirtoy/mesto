@@ -45,7 +45,7 @@
 
 @import url("../blocks/popup/__close-button/popup__close-button.css");
 
-@import url("../blocks/popup/_place/popup_place_photos.css");
+@import url("../blocks/popup/_place/popup_place.css");
 @import url("../blocks/popup/_place/_photos/popup_place_photos.css");
 
 @import url("../blocks/popup/__submit-button/_invalid/popup__submit-button_invalid.css");
