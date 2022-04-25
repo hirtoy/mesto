@@ -4,6 +4,7 @@
 	background-color: transparent;
 	width: 75vw;
 	max-height: 299px;
+	position: relative;
 }
 
 @media screen and (min-width: 768px) {

@@ -154,7 +154,7 @@ function handleAddButtonClick() {
 function openImagePopup(e) {
 	openPopUp(imagePopupNode);
 	image.src = e.target.src;
-	image.alt = e.target.alt;
+	imageSubtitle.textContent = e.target.alt; 
 }
 
 
