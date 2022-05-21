@@ -56,8 +56,8 @@
 						minlength="2"
 						maxlength="40">
 					<span
-						class="popup__form-error"
-						id="popup__form-item_value_name_error"></span>
+						class="popup__form-error popup__form-item_value_name_error"
+						id="popup__form-item_value_name"></span>
 					<input
 						class="popup__form-item popup__form-item_value_description"
 						id="popup__form-item_value_description"
@@ -68,8 +68,8 @@
 						minlength="2"
 						maxlength="200">
 					<span
-						class="popup__form-error"
-						id="popup__form-item_value_description_error"></span>
+						class="popup__form-error popup__form-item_value_description_error"
+						id="popup__form-item_value_description"></span>
 					<button
 						class="popup__submit-button popup__profile-submit"
 						type="submit">
@@ -99,8 +99,8 @@
 						minlength="2"
 						maxlength="30">
 					<span
-						class="popup__form-error popup__form-error_place_elements"
-						id="popup__form-item_value_place-name_error"
+						class="popup__form-error popup__form-item_value_place-name_error"
+						id="popup__form-item_value_place-name"
 						style="top: 135px;"></span>
 					<input
 						class="popup__form-item popup__form-item_place_elements popup__form-item_value_place-url"
@@ -110,8 +110,8 @@
 						placeholder="Ссылка на картинку"
 						required>
 					<span
-						class="popup__form-error popup__form-error_place_elements"
-						id="popup__form-item_value_place-url_error"></span>
+						class="popup__form-error popup__form-item_value_place-url_error"
+						id="popup__form-item_value_place-url"></span>
 					<button
 						class="popup__submit-button popup__submit-button_place_elements"
 						type="submit"
@@ -137,7 +137,7 @@
       </figure>
 		</div>
 
-		<template class="template">
+		<template class="template" id="card">
 			<div class="element">
 				<button type="button" class="element__remove-button"></button>
 				<img src="#" alt="#" class="element__image">
@@ -148,7 +148,6 @@
 			</div>
 		</template>
 
-		<script src="scripts/validate.js"></script>
-		<script src="scripts/script.js"></script>
+		<script type="module" src="scripts/index.js"></script>
 	</body>
 </html>
