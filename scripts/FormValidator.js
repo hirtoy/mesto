@@ -6,7 +6,7 @@ export class FormValidator {
 	};
 	// Функция, которая добавляет класс с ошибкой
 	_showInputError(inputElement, errorMessage) {
-	  const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
+	  const errorElement = this._formElement.querySelector(`.${inputElement.name}-error`);
 	  inputElement.classList.add(this._selectors.inputInvalidClass);
 	  errorElement.classList.add(this._selectors.inputSelector);
 	  errorElement.textContent = errorMessage;
@@ -14,7 +14,7 @@ export class FormValidator {
   
 	// Функция, которая удаляет класс с ошибкой
 	_hideInputError(inputElement) {
-	  const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
+	  const errorElement = this._formElement.querySelector(`.${inputElement.name}-error`);
 	  inputElement.classList.remove(this._selectors.inputInvalidClass);
 	  errorElement.classList.remove(this._selectors.inputSelector);
 	  errorElement.textContent = " ";
