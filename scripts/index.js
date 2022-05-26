@@ -21,6 +21,7 @@ const profileAddButtonNode = document.querySelector(".profile__add-button");
 const profileEditorCloseButtonNode = document.querySelector("#profile__editor_close-button");
 const image = document.querySelector("#popup__window_image-viewer");
 const imageSubtitle = document.querySelector("#popup__image-subtitle");
+const popupForm = document.querySelector(".popup__form");
 
 const selectors = {
 	formSelector: ".popup__form",
@@ -35,11 +36,13 @@ function addElement(event) {
 	const myNewCard= { title: placeName.value, link: placeUrl.value };
 	addNewCard(myNewCard);
 	closePopUp(popupPlaceEditorNode);
+	popupForm.reset();
 }
 
 document
 	.querySelector("#element__editor")
 	.addEventListener("submit", addElement);
+
 
 profileEditButtonNode.addEventListener("click", (event) => {
 	popupNameInput.value = profileNameNode.textContent;
@@ -54,7 +57,7 @@ profileAddButtonNode.addEventListener("click", (event) => {
 function openPopUp(popup) {
 	popup.classList.add("popup_visible");
 	document.addEventListener("keyup", handleEscPressOnForm);
-	document.addEventListener("click", handleOverlayClick);
+	document.addEventListener("mousedown", handleOverlayClick);
 }
 
 function closePopUp(popup) {
@@ -76,9 +79,9 @@ imageViewerCloseButtonNode.addEventListener("click", (event) => {
 });
 
 function handleEditButtonClick() {
-	openPopUp(profileEditorNode);
 	popupNameInput.value = profileNameNode.textContent;
 	popupDescriptionInput.value = profileDescriptionNode.textContent;
+	openPopUp(profileEditorNode);
 }
 profileEditButtonNode.addEventListener("click", handleEditButtonClick);
 
@@ -109,7 +112,7 @@ function createCard(title, link) {
 }
 
 function addNewCard(card) {
-	placesContainerElement.append(createCard(card.title, card.link));
+	placesContainerElement.prepend(createCard(card.title, card.link));
   }
   initialCards.forEach(card => { addNewCard(card) });
 

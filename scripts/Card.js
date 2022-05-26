@@ -8,7 +8,7 @@ export class Card {
   
   _getTemplate() {
     const templateElement = document.querySelector(this._templateSelector);
-    const cardElement = templateElement.content.firstElementChild.cloneNode(true);
+    const cardElement = templateElement.content.cloneNode(true);
     return cardElement;
   };
 
@@ -32,14 +32,14 @@ export class Card {
     this._element = this._getTemplate();
 
     const elementTitle = this._element.querySelector(".element__title");
-    const elementImage = this._element.querySelector(".element__image");
+    this._elementImage = this._element.querySelector(".element__image");
 
     elementTitle.textContent = this._title;
-    elementImage.setAttribute("src", this._link);
-    elementImage.setAttribute("alt", this._title);
+    this._elementImage.setAttribute("src", this._link);
+    this._elementImage.setAttribute("alt", this._title);
 
     this._element.elementTitle = elementTitle;
-    this._element.elementImage = elementImage;
+    this._element._elementImage = this._elementImage;
   
       this._setEventListners();
 
