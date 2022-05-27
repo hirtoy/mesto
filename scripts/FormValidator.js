@@ -3,7 +3,7 @@ export class FormValidator {
 		this._selectors = selectors; 
 		this._submitButton = formElement.querySelector(selectors.submitButtonSelector); 
 		this._formElement = formElement;
-		this._inputError = Array.from(this._formElement.querySelectorAll(this._selectors.inputSelector));
+		this._inputList = Array.from(this._formElement.querySelectorAll(this._selectors.inputSelector));
 	}; 
 	// Функция, которая добавляет класс с ошибкой 
 	_showInputError(inputElement, errorMessage) { 
@@ -33,12 +33,12 @@ export class FormValidator {
 	}; 
 
 	//проверяем поля ввода на корректность 
-	_hasInvalidInput(_inputError) { 
-	  return this._inputError.some(input => !input.validity.valid) 
+	_hasInvalidInput(_inputList) { 
+	  return this._inputList.some(input => !input.validity.valid) 
 	}; 
 	//функция изменения состояния кнопки 
-	_toggleButtonState(_inputError) { 
-	  if (this._hasInvalidInput(this._inputError)) { 
+	_toggleButtonState(_inputList) { 
+	  if (this._hasInvalidInput(this._inputList)) { 
 		this._submitButton.classList.add(this._selectors.buttonInvalidClass); 
 		this._submitButton.setAttribute("disabled", true); 
 	  } else { 
@@ -49,11 +49,11 @@ export class FormValidator {
 
 	//функция добавляет обработчики сразу всем полям формы 
 	_setEventListeners() { 
-	  this._toggleButtonState(this._inputError); 
-	  this._inputError.forEach((inputElement) => { 
+	  this._toggleButtonState(); 
+	  this._inputList.forEach((inputElement) => { 
 		inputElement.addEventListener("input", () => { 
 		  this._checkInputValidity(inputElement); 
-		  this._toggleButtonState(this._inputError); 
+		  this._toggleButtonState(this._inputList); 
 		}); 
 	  }); 
 	}; 
@@ -65,8 +65,8 @@ export class FormValidator {
  
 	//Функция сброса ошибок 
 	restartFormValidation() { 
-	  this._toggleButtonState(this._inputError);
-	  this._inputError.forEach((inputElement) => {
+	  this._toggleButtonState(this._inputList);
+	  this._inputList.forEach((inputElement) => {
 		this._hideInputError(inputElement);
 	  });
 	}

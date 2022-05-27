@@ -37,9 +37,6 @@ export class Card {
     elementTitle.textContent = this._title;
     this._elementImage.setAttribute("src", this._link);
     this._elementImage.setAttribute("alt", this._title);
-
-    this._element.elementTitle = elementTitle;
-    this._element._elementImage = this._elementImage;
   
       this._setEventListners();
 

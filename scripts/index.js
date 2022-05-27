@@ -21,7 +21,7 @@ const profileAddButtonNode = document.querySelector(".profile__add-button");
 const profileEditorCloseButtonNode = document.querySelector("#profile__editor_close-button");
 const image = document.querySelector("#popup__window_image-viewer");
 const imageSubtitle = document.querySelector("#popup__image-subtitle");
-const popupForm = document.querySelector(".popup__form");
+const popupForm = document.querySelector(".popup__form_add");
 
 const selectors = {
 	formSelector: ".popup__form",
@@ -29,14 +29,6 @@ const selectors = {
 	submitButtonSelector: ".popup__submit-button",
 	inputInvalidClass: "popup__form-item_state_invalid",
 	buttonInvalidClass: "popup__submit-button_invalid"
-}
-
-function addElement(event) {
-	event.preventDefault();
-	const myNewCard= { title: placeName.value, link: placeUrl.value };
-	addNewCard(myNewCard);
-	closePopUp(popupPlaceEditorNode);
-	popupForm.reset();
 }
 
 document
@@ -55,6 +47,7 @@ profileAddButtonNode.addEventListener("click", (event) => {
 });
 
 function openPopUp(popup) {
+	popupForm.reset();
 	popup.classList.add("popup_visible");
 	document.addEventListener("keyup", handleEscPressOnForm);
 	document.addEventListener("mousedown", handleOverlayClick);
@@ -64,6 +57,14 @@ function closePopUp(popup) {
 	popup.classList.remove("popup_visible");
 	document.removeEventListener("keyup", handleEscPressOnForm);
 	document.removeEventListener("click", handleOverlayClick);
+}
+
+function addElement(event) {
+	event.preventDefault();
+	const myNewCard= { title: placeName.value, link: placeUrl.value };
+	addNewCard(myNewCard);
+	closePopUp(popupPlaceEditorNode);
+	popupForm.reset();
 }
 
 profileEditorCloseButtonNode.addEventListener("click", (event) => {
@@ -91,10 +92,10 @@ function handleAddButtonClick() {
 elementAddButtonNode.addEventListener("click", handleAddButtonClick);
 
 function openImagePopup(title, link) {
-	openPopUp(imagePopupNode);
 	image.src = link;
 	image.alt = title;
-	imageSubtitle.textContent = title; 
+	imageSubtitle.textContent = title;
+	openPopUp(imagePopupNode);
 }
 
 //редактирование профиля

@@ -1,18 +1,10 @@
 .popup__window {
-    position: relative;
-    width: 430px;
-	height: 330px;
-    color: #000;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 430px;
+    width: 100%;
     background: #fff;
-    padding: 36px;
     border-radius: 10px;
-    box-shadow: 0 0 25px rgb(0 0 0 / 15%);
-    box-sizing: border-box;
-}
-
-@media screen and (max-width: 767px) {
-	.popup__window {
-		padding: 25px 22px;
-		height: 282px;
-	}
 }

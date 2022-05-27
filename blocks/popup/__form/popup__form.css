@@ -1,12 +1,7 @@
 .popup__form {
   font-family: "Inter", "Arial", sans-serif;
-  display: block;
-  border-style: none;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  padding-block-start: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  padding-block-end: 0;
-  border-width: 0;
+  border: 0;
+  padding: 0;
+  max-width: 430px;
+  margin: 0 36px 36px;
 }
