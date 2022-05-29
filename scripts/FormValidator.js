@@ -21,6 +21,17 @@ export class FormValidator {
 	  errorElement.textContent = " ";
 	}; 
 
+	//функция добавляет обработчики сразу всем полям формы 
+	_setEventListeners() { 
+		this._toggleButtonState(this._inputList, this._submitButton);
+		this._inputList.forEach((inputElement) => { 
+			inputElement.addEventListener("input", () => { 
+			this._toggleButtonState(this._inputList, this._submitButton); 
+			this._checkInputValidity(inputElement); 
+			}); 
+		}); 
+	};
+
 	// Функция, которая проверяет валидность поля 
 	_checkInputValidity(inputElement) { 
 	  if (!inputElement.validity.valid) { 
@@ -33,41 +44,31 @@ export class FormValidator {
 	}; 
 
 	//проверяем поля ввода на корректность 
-	_hasInvalidInput(_inputList) { 
+	_hasInvalidInput() { 
 	  return this._inputList.some(input => !input.validity.valid) 
-	}; 
+	};
+	
 	//функция изменения состояния кнопки 
-	_toggleButtonState(_inputList) { 
-	  if (this._hasInvalidInput(this._inputList)) { 
+	_toggleButtonState() {
+	  if (this._hasInvalidInput()) { 
 		this._submitButton.classList.add(this._selectors.buttonInvalidClass); 
 		this._submitButton.setAttribute("disabled", true); 
-	  } else { 
+	  } else {
 		this._submitButton.classList.remove(this._selectors.buttonInvalidClass); 
 		this._submitButton.removeAttribute("disabled"); 
 	  } 
-	}; 
-
-	//функция добавляет обработчики сразу всем полям формы 
-	_setEventListeners() { 
-	  this._toggleButtonState(); 
-	  this._inputList.forEach((inputElement) => { 
-		inputElement.addEventListener("input", () => { 
-		  this._checkInputValidity(inputElement); 
-		  this._toggleButtonState(this._inputList); 
-		}); 
-	  }); 
-	}; 
+	};
 
 	//находим и перебираем все формы на странице 
-	enableValidation() { 
-	  this._setEventListeners(); 
+	enableValidation() {
+		this._setEventListeners();
 	} 
  
 	//Функция сброса ошибок 
 	restartFormValidation() { 
-	  this._toggleButtonState(this._inputList);
 	  this._inputList.forEach((inputElement) => {
 		this._hideInputError(inputElement);
+		this._toggleButtonState(this._inputList, this._submitButton);
 	  });
 	}
 }

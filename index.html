@@ -45,7 +45,7 @@
 					class="popup__close-button"
 					id="profile__editor_close-button"></button>
 				<h3 class="popup__heading">Редактировать профиль</h3>
-				<form class="popup__form" name="profile__editor">
+				<form class="popup__form" name="profile__editor" novalidate>
 				    <label class="popup__field">
 					    <input
 						    class="popup__form-item popup__form-item_value_name"
@@ -92,7 +92,7 @@
 				<h3 class="popup__heading popup__heading_place_elements">
 					Новое место
 				</h3>
-				<form class="popup__form popup__form_add" name="element__editor" id="element__editor">
+				<form class="popup__form popup__form_add" name="element__editor" id="element__editor" novalidate>
 					<label class="popup__field">
 					    <input
 						    class="popup__form-item popup__form-item_place_elements popup__form-item_value_place-name"
@@ -102,7 +102,8 @@
 						    placeholder="Название"
 						    required
 						    minlength="2"
-						    maxlength="30">
+						    maxlength="30"
+							required>
 					    <span
 						class="popup__form-error popup-placename-error"
 						id="popup__form-item_place-name"

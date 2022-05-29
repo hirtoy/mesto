@@ -22,6 +22,7 @@ const profileEditorCloseButtonNode = document.querySelector("#profile__editor_cl
 const image = document.querySelector("#popup__window_image-viewer");
 const imageSubtitle = document.querySelector("#popup__image-subtitle");
 const popupForm = document.querySelector(".popup__form_add");
+const submitElementBtn = document.getElementById("popup__submit-button_place_elements");
 
 const selectors = {
 	formSelector: ".popup__form",
@@ -87,6 +88,9 @@ function handleEditButtonClick() {
 profileEditButtonNode.addEventListener("click", handleEditButtonClick);
 
 function handleAddButtonClick() {
+	//Сброс состояния disabled в true
+	submitElementBtn.setAttribute("disabled", true);
+	
 	openPopUp(popupPlaceEditorNode);
 }
 elementAddButtonNode.addEventListener("click", handleAddButtonClick);
