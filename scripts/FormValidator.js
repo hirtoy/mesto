@@ -23,10 +23,10 @@ export class FormValidator {
 
 	//функция добавляет обработчики сразу всем полям формы 
 	_setEventListeners() { 
-		this._toggleButtonState(this._inputList, this._submitButton);
+		this._toggleButtonState();
 		this._inputList.forEach((inputElement) => { 
 			inputElement.addEventListener("input", () => { 
-			this._toggleButtonState(this._inputList, this._submitButton); 
+			this._toggleButtonState(); 
 			this._checkInputValidity(inputElement); 
 			}); 
 		}); 
@@ -66,9 +66,9 @@ export class FormValidator {
  
 	//Функция сброса ошибок 
 	restartFormValidation() { 
+	  this._toggleButtonState();
 	  this._inputList.forEach((inputElement) => {
 		this._hideInputError(inputElement);
-		this._toggleButtonState(this._inputList, this._submitButton);
 	  });
 	}
 }
