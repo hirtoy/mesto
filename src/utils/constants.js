@@ -22,7 +22,9 @@ export const imagePopupNode = document.getElementById("image-viewer");
 export const imageViewerCloseButtonNode = document.getElementById("image-viewer_close-button");
 
 export const elementAddButtonNode = document.getElementById("element__add-button");
-export const elementCard = document.querySelector(".elements");
+export const elements = document.querySelector(".elements");
+export const elementCard = document.querySelector(".element");
+// export const addElement = document.querySelector("element-editor");
 
 export const popupPlaceEditorNode = document.getElementById("place-editor");
 export const placeEditorCloseButtonNode = document.getElementById("place__editor_close-button");

@@ -1,19 +1,22 @@
-export class UserInfo {
-    constructor(name, userInfo) {
+export default class UserInfo {
+    constructor(name, info) {
         this.name = name;
-        this.userInfo = userInfo;
+        this.info = info;
     };
 
-    setUserInfo(data) {
-        this.name.textContent = data.name;
-        this.userInfo.textContent = data.userInfo;
+    setUserInfo() {
+        const data = {
+        name: this.name.textContent,
+        info: this.info.textContent
+        }
+        return data;
     };
 
     getUserInfo() {
-        const data = {
+        const userInfo = {
             name: this.name.textContent,
-            info: this.userInfo.textContent
+            info: this.info.textContent
         };
-        return data;
+        return userInfo;
     };
 }
