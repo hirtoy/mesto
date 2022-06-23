@@ -1,12 +1,12 @@
    import './index.css';
 
 import { initialCards } from"../utils/initialCards.js";
-import { Card } from "../components/card.js";
-import { FormValidator } from "../components/FormValidator.js";
-import { Section } from "../components/Section.js";
-import { PopupWithImage } from "../components/PopupWithImage.js";
+import Card from "../components/card.js";
+import FormValidator from "../components/FormValidator.js";
+import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
-import  UserInfo from "../components/UserInfo.js";
+import UserInfo from "../components/UserInfo.js";
 
 import { profileEditButtonNode,
 	profileNameNode,
@@ -25,93 +25,84 @@ import { profileEditButtonNode,
 	popupPlaceEditorNode,
 	popupPhotoSelector,
 	selectors,
-	elementCard} from "../utils/constants.js";
+	elementCard,
+	elements,
+	profileInputName,
+	profileInputDescription} from "../utils/constants.js";
 
 
-const userInfo = new UserInfo(profileNameNode, profileDescriptionNode);
+const userInfo = new UserInfo(".profile__name", ".profile__description");
 
+//Попап Профиль
 const popupWithInfoForm = new PopupWithForm({
 	popupSelector:'#profile-editor',
 	handleFormSubmit:(data) => {
-		userInfo.setUserInfo(data.name, data.info);
-		popupWithInfoForm.close(data);
-	}
+		userInfo.setUserInfo(data);
+		popupWithInfoForm.close();
+	},
 });
 popupWithInfoForm.setEventListeners();
 
-profileEditButtonNode.addEventListener('click', function() {
-	const userData = userInfo.getUserInfo(); 
-	profileNameNode.value = userData.name; 
-	profileDescriptionNode.value = userData.info;
-	popupWithInfoForm.open(); 
+//слушатель для профиля
+profileEditButtonNode.addEventListener('click',() => {
+	const getUserInfo = userInfo.getUserInfo();  
+	profileInputName.value = getUserInfo.name;  
+	profileInputDescription.value = getUserInfo.description; 
+	popupWithInfoForm.open();  
 });
 
-editForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    profileNameNode.textContent = popupNameInput.value;
-    profileDescriptionNode.textContent = popupDescriptionInput.value;
-    popupWithInfoForm.close();
-})
-
+//Картинки
 const popupWithImage = new PopupWithImage(popupPhotoSelector);
 popupWithImage.setEventListeners();
 
+//Попап Карточки
 const popupWithAddForm = new PopupWithForm({
 	popupSelector: '#place-editor',
-	handleFormSubmit: () => {
-		const card = createCard({
-			title: placeName.value,
-			link: placeUrl.value
-		});
-		const cardElement = card;
-  	    cardList.addItem(cardElement, "prepend");
-  	    popupWithAddForm.close();
+	handleFormSubmit: (item) => {
+  	    cardList.addItem(createCard(item));
+		  popupWithAddForm.close();
 	}
 });
 popupWithAddForm.setEventListeners();
 
+//Функция создания карточек
 const createCard = (item) => {
-	const card = new Card({
-	    item: item,
-		cardSelector: "#card",
-	    handleCardClick:(item) => {
-		   popupWithImage.open(item)
-	}});
-	return card.generateCard();
-}
-  submitElementBtn.addEventListener("click", (event) => {
-	 	createCard(event)
-	    });
+	return new Card(item, ".template", (data) => {
+		popupWithImage.open(data);
+	}).generateCard();
+  }
 
+// const createCard = (item) => {
+// 	const card = new Card({
+// 	    item: item,
+// 		cardSelector: ".template",
+// 	    handleCardClick:(item) => {
+// 		   popupWithImage.open(item)
+// 	}});
+// 	return card.generateCard();
+// }
+//   submitElementBtn.addEventListener("click", (event) => {
+// 	 	createCard(event)
+// 	    });
+
+//Добавление карточек
 const cardList = new Section({
 	items: initialCards,  
-		renderer: (item) => { 
-		createCard(item);
-		cardList.addItem(createCard(item)) 
+	renderer: (item) => {
+	cardList.addItem(createCard(item));
 	}}, 
-'.elements'); 
+	elements); 
   cardList.renderItems(); 
 
-profileAddButtonNode.addEventListener("click", () => {
+  profileAddButtonNode.addEventListener("click", () => {
 	popupWithAddForm.open();
 });
 
-profileEditorCloseButtonNode.addEventListener("click", () => {
-	popupWithInfoForm.close();
-});
-
-placeEditorCloseButtonNode.addEventListener("click", () => {
-	popupWithAddForm.close();
-});
-
-imageViewerCloseButtonNode.addEventListener("click", () => {
-	popupWithImage.close();
-});
 
   const formEditProfile = document.querySelector("#profile-editor");
-  const formEditProfileValidator = new FormValidator(selectors, formEditProfile, profileEditButtonNode);
+  const formEditProfileValidator = new FormValidator(selectors, formEditProfile, profileAddButtonNode);
   formEditProfileValidator.enableValidation();
   
   const formAddCard = document.querySelector("#place-editor");
-  const formAddCardValidator = new FormValidator(selectors, formAddCard, submitElementBtn);
+  const formAddCardValidator = new FormValidator(selectors, formAddCard);
   formAddCardValidator.enableValidation();

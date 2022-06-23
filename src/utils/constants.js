@@ -26,6 +26,14 @@ export const elements = document.querySelector(".elements");
 export const elementCard = document.querySelector(".element");
 // export const addElement = document.querySelector("element-editor");
 
+export const profileInputName = document
+.querySelector(".popup_type_profile")
+.querySelector(".popup__form-item_value_name");
+export const profileInputDescription = document
+.querySelector(".popup_type_profile")
+.querySelector(".popup__form-item_value_description");
+
+
 export const popupPlaceEditorNode = document.getElementById("place-editor");
 export const placeEditorCloseButtonNode = document.getElementById("place__editor_close-button");
 

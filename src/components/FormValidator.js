@@ -1,8 +1,8 @@
-export class FormValidator { 
+export default class FormValidator { 
 	constructor(selectors, formElement) { 
-		this._selectors = selectors; 
-		this._submitButton = formElement.querySelector(selectors.submitButtonSelector); 
+		this._selectors = selectors;
 		this._formElement = formElement;
+		this._submitButton = formElement.querySelector(this._selectors.submitButtonSelector); 
 		this._inputList = Array.from(this._formElement.querySelectorAll(this._selectors.inputSelector));
 	}; 
 	// Функция, которая добавляет класс с ошибкой 
@@ -20,6 +20,12 @@ export class FormValidator {
 	  errorElement.classList.remove(this._selectors.inputSelector); 
 	  errorElement.textContent = " ";
 	}; 
+
+//Добавление функции disabled
+	_handleAddButtonClick() { 
+		this._submitButton.classList.add(this._selectors.buttonInvalidClass); 
+		this._submitButton.setAttribute("disabled", true); 
+	} 
 
 	//функция добавляет обработчики сразу всем полям формы 
 	_setEventListeners() { 
@@ -66,8 +72,8 @@ export class FormValidator {
  
 	//Функция сброса ошибок 
 	restartFormValidation() { 
-	  this._toggleButtonState();
 	  this._inputList.forEach((inputElement) => {
+		this._toggleButtonState();
 		this._hideInputError(inputElement);
 	  });
 	}

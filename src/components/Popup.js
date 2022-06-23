@@ -28,13 +28,8 @@ export default class Popup {
         }
     }
 
-    _removeEventListeners() {
-        this._popupElement.removeEventListener('click', this._handleClickClose);
-
-    }
-
     setEventListeners() {
         this._popupElement.querySelector('.popup__close-button').addEventListener('click', () => this.close());
-        this._popupElement.addEventListener('click', this._handleClickClose);
+        this._popupElement.addEventListener('click', (event) => this._handleClickClose(event));
     }
 }
