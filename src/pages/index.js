@@ -50,7 +50,9 @@ profileEditButtonNode.addEventListener('click',() => {
 	const userData = userInfo.getUserInfo();  
 	popupNameInput.value = userData.name;  
 	popupDescriptionInput.value = userData.description; 
-	popupWithInfoForm.open();  
+	popupWithInfoForm.open(); 
+	
+	formEditProfileValidator.handleAddButtonClick();
 });
 
 //Картинки
@@ -85,6 +87,7 @@ const cardList = new Section({
 
   profileAddButtonNode.addEventListener("click", () => {
 	popupWithAddForm.open();
+	formAddCardValidator.handleAddButtonClick();
 });
 
 

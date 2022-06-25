@@ -22,9 +22,8 @@ export default class FormValidator {
 	}; 
 
 //Добавление функции disabled
-	_handleAddButtonClick() { 
-		this._submitButton.classList.add(this._selectors.buttonInvalidClass); 
-		this._submitButton.setAttribute("disabled", true); 
+	handleAddButtonClick() {
+		 this._submitButton.setAttribute("disabled", true); 
 	} 
 
 	//функция добавляет обработчики сразу всем полям формы 
