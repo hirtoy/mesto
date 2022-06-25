@@ -1,4 +1,4 @@
-   import './index.css';
+    import './index.css';
 
 import { initialCards } from"../utils/initialCards.js";
 import Card from "../components/card.js";
@@ -31,23 +31,25 @@ import { profileEditButtonNode,
 	profileInputDescription} from "../utils/constants.js";
 
 
-const userInfo = new UserInfo(".profile__name", ".profile__description");
+const userInfo = new UserInfo({
+	nameProfile: ".profile__name",
+	descriptionProfile: ".profile__description"});
 
 //Попап Профиль
 const popupWithInfoForm = new PopupWithForm({
-	popupSelector:'#profile-editor',
-	handleFormSubmit:(data) => {
+	popupSelector:'.popup_type_profile',
+	handleFormSubmit: (data) => {
 		userInfo.setUserInfo(data);
-		popupWithInfoForm.close();
+	    popupWithInfoForm.close();
 	},
 });
 popupWithInfoForm.setEventListeners();
 
 //слушатель для профиля
 profileEditButtonNode.addEventListener('click',() => {
-	const getUserInfo = userInfo.getUserInfo();  
-	profileInputName.value = getUserInfo.name;  
-	profileInputDescription.value = getUserInfo.description; 
+	const userData = userInfo.getUserInfo();  
+	popupNameInput.value = userData.name;  
+	popupDescriptionInput.value = userData.description; 
 	popupWithInfoForm.open();  
 });
 
@@ -66,24 +68,11 @@ const popupWithAddForm = new PopupWithForm({
 popupWithAddForm.setEventListeners();
 
 //Функция создания карточек
-const createCard = (item) => {
-	return new Card(item, ".template", (data) => {
+function createCard(item) {
+	return new Card(item, "#card", (data) => {
 		popupWithImage.open(data);
 	}).generateCard();
   }
-
-// const createCard = (item) => {
-// 	const card = new Card({
-// 	    item: item,
-// 		cardSelector: ".template",
-// 	    handleCardClick:(item) => {
-// 		   popupWithImage.open(item)
-// 	}});
-// 	return card.generateCard();
-// }
-//   submitElementBtn.addEventListener("click", (event) => {
-// 	 	createCard(event)
-// 	    });
 
 //Добавление карточек
 const cardList = new Section({
@@ -92,7 +81,7 @@ const cardList = new Section({
 	cardList.addItem(createCard(item));
 	}}, 
 	elements); 
-  cardList.renderItems(); 
+  cardList.rendererItems(); 
 
   profileAddButtonNode.addEventListener("click", () => {
 	popupWithAddForm.open();
