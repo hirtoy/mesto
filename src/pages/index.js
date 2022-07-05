@@ -70,6 +70,19 @@ profileEditButtonNode.addEventListener('click',() => {
 	formEditProfileValidator.handleAddButtonClick();
 });
 
+let myInfo;
+Promise.all([api.getUserProfile(), api.getInitialCards()])
+    .then(([objectInfo, cardArr]) => {
+		myInfo = objectInfo;
+		userInfo.setUserInfo(objectInfo);
+		cardList.rendererItems(cardArr);
+		console.log(objectInfo);
+		console.log(cardArr);
+	})
+	.catch((error) => {
+		console.log(error);
+	});
+
 //Картинки
 const popupWithImage = new PopupWithImage(popupPhotoSelector);
 popupWithImage.setEventListeners();
