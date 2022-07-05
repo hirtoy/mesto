@@ -71,10 +71,10 @@ profileEditButtonNode.addEventListener('click',() => {
 	formEditProfileValidator.handleAddButtonClick();
 });
 
-let myInfo;
+let adminInfo;
 Promise.all([api.getUserProfile(), api.getInitialCards()])
     .then(([objectInfo, cardArr]) => {
-		myInfo = objectInfo;
+		adminInfo = objectInfo;
 		userInfo.setUserInfo(objectInfo);
 		cardList.rendererItems(cardArr);
 		console.log(objectInfo);
