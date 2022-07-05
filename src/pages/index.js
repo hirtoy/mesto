@@ -156,8 +156,7 @@ const cardList = new Section({
 	renderer: (item) => {
 	cardList.addItemAppend(createCard(item));
 	}}, 
-	elements); 
-  cardList.rendererItems(); 
+	elements);
 
 //попап "Удаление карточки"
 const popupDelCard = new PopupWithConfirmation({
