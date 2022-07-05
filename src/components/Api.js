@@ -12,18 +12,18 @@ export default class Api {
   }
 
   // Загрузка информации о пользователе с сервера
-  getUserProfile() {
-    return fetch(`${this._address}/users/me`, {
+  async getUserProfile() {
+    const res = await fetch(`${this._address}/users/me`, {
       method: 'GET',
       headers: {
         authorization: this._token
       }
-    })
-    .then(this._handleResponse)
+    });
+    return this._handleResponse(res);
   }
   // Редактирование профиля
-  setUserProfile(data) {
-    return fetch(`${this._address}/users/me`, {
+  async setUserProfile(data) {
+    const res = await fetch(`${this._address}/users/me`, {
       method: 'PATCH',
       headers: {
         authorization: this._token,
@@ -33,12 +33,12 @@ export default class Api {
         name: data.name,
         about: data.about
       })
-    })
-    .then(this._handleResponse)
+    });
+    return this._handleResponse(res);
   }
   // Обновление аватара пользователя
-  editUserAvatar(data) {
-    return fetch(`${this._address}/users/me/avatar`, {
+  async editUserAvatar(data) {
+    const res = await fetch(`${this._address}/users/me/avatar`, {
       method: 'PATCH',
       headers: {
         authorization: this._token,
@@ -47,22 +47,22 @@ export default class Api {
       body: JSON.stringify({
         avatar: data.avatar,
       })
-    })
-    .then(this._handleResponse)
+    });
+    return this._handleResponse(res);
   }
   // Загрузка карточек с сервера
-  getInitialCards() {
-    return fetch(`${this._address}/cards`, {
+  async getInitialCards() {
+    const res = await fetch(`${this._address}/cards`, {
       method: 'GET',
       headers: {
         authorization: this._token
       }
-    })
-    .then(this._handleResponse)
+    });
+    return this._handleResponse(res);
   }
   // Добавление новой карточки
-  addNewCard(data) {
-    return fetch(`${this._address}/cards`, {
+  async addNewCard(data) {
+    const res = await fetch(`${this._address}/cards`, {
       method: 'POST',
       headers: {
         authorization: this._token,
@@ -72,37 +72,37 @@ export default class Api {
         name: data.name,
         link: data.link
       })
-    })
-    .then(this._handleResponse)
+    });
+    return this._handleResponse(res);
   }
   // Удаление карточки
-  removeCard(id) {
-    return fetch(`${this._address}/cards/${id}`, {
+  async removeCard(id) {
+    const res = await fetch(`${this._address}/cards/${id}`, {
       method: 'DELETE',
       headers: {
         authorization: this._token
       }
-    })
-    .then(this._handleResponse)
+    });
+    return this._handleResponse(res);
   }
   // Постановка лайка
-  addLikeCard(id) {
-    return fetch(`${this._address}/cards/likes/${id}`, {
+  async addLikeCard(id) {
+    const res = await fetch(`${this._address}/cards/likes/${id}`, {
       method: 'PUT',
       headers: {
         authorization: this._token
       }
-    })
-    .then(this._handleResponse)
+    });
+    return this._handleResponse(res);
   }
   // Снятие лайка
-  removeLikeCard(id) {
-    return fetch(`${this._address}/cards/likes/${id}`, {
+  async removeLikeCard(id) {
+    const res = await fetch(`${this._address}/cards/likes/${id}`, {
       method: 'DELETE',
       headers: {
         authorization: this._token
       }
-    })
-    .then(this._handleResponse)
+    });
+    return this._handleResponse(res);
   }
 }
