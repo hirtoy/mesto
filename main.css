@@ -54,6 +54,10 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__likes-counter/element__likes-counter.css ***!
   \***************************************************************************************************************************************************************************************/
 .element__likes-counter{display:flex;flex-direction:row;justify-content:space-between;margin:0 auto;max-width:246px}
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__likes-counter/__heart-counter/element__heart-counter.css ***!
+  \*******************************************************************************************************************************************************************************************************/
+.element__heart-counter{color:#000;font-family:Inter;font-size:13px;font-weight:400;line-height:16px;margin:0;text-align:center}
 /*!*********************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__heart-icon/element__heart-icon.css ***!
   \*********************************************************************************************************************************************************************************/
@@ -66,6 +70,10 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__remove-button/element__remove-button.css ***!
   \***************************************************************************************************************************************************************************************/
 .element__remove-button{background-color:transparent;background-image:url(images/remove-button.cbc09a894bdd4c956365.svg);border:0;cursor:pointer;height:19.3px;position:absolute;right:15px;top:18px;width:18px}.element__remove-button:hover{opacity:.6}
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__remove-button/_active/element__remove-button_active.css ***!
+  \******************************************************************************************************************************************************************************************************/
+.element__remove-button_active{display:block}
 /*!********************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/profile.css ***!
   \********************************************************************************************************************************************************/

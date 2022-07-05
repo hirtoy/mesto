@@ -17,16 +17,16 @@
 
 				<main class="content">
 					<section class="profile">
-							<img src="images/jacques-yves_cousteau.c15cb08ab8ecfaba54c6.png"  alt="Аватар профиля" class="profile__avatar">
+						<div class="profile__avatar-place">
+							<img src="#"  alt="Подождите, загружается" class="profile__avatar">
+							<div class="profile__avatar-overlay"></div>
+						</div>
 							<div class="profile__text">
 									<h1 class="profile__name">Жак-Ив Кусто</h1>
 									<button type="button" class="profile__edit-button"></button>
 								<p class="profile__description">Исследователь океана</p>
 							</div>
-						<button
-							type="button"
-							class="profile__add-button"
-							id="element__add-button"></button>
+						<button class="profile__add-button" type="button" id="element__add-button"></button>
 					</section>
 
 					<section class="elements"></section>
@@ -134,7 +134,7 @@
 			</div>
 		</div>
 
-		<section class="popup popup_place_avatar">
+		<section class="popup" id="avatar-editor">
 			<div class="popup__window">
 				<h2 class="popup__heading">Обновить аватар</h2>
 				<form class="popup__form popup__form_avatar" name="popup-form-avatar" novalidate>
@@ -202,6 +202,7 @@
 				<div class="element__likes-counter">
 					<h2 class="element__title"></h2>
 					<button type="button" class="element__heart-icon"></button>
+					<p class="element__heart-counter"></p>
 				</div>
 			</div>
 		</template>
