@@ -34,9 +34,8 @@ import { profileEditButtonNode,
 	profileInputDescription} from "../utils/constants.js";
 
 const api = new Api({
-	
 		address: "https://mesto.nomoreparties.co/v1/cohort-44",
-		token: "Ly5h3pqkBn6nFes9yVGPYjYPqQH7ezbA"
+		token: "497373c8-3f58-4b67-8592-c177fbd661e3"
 	});
 
 const userInfo = new UserInfo({
