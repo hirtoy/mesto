@@ -158,7 +158,7 @@ const cardList = new Section({
   cardList.rendererItems(); 
 
 //попап "Удаление карточки"
-const popupDelCard = new PopupSubmit({
+const popupDelCard = new PopupWithConfirmation({
 	popupSelector: ".popup_place_delete",
   });
   popupDelCard.setEventListeners();
