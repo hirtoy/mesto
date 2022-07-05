@@ -31,7 +31,7 @@ export default class Api {
       },
       body: JSON.stringify({
         name: data.name,
-        about: data.about
+        about: data.about,
       })
     });
     return this._handleResponse(res);
