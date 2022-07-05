@@ -6,6 +6,7 @@ export default class PopupWithForm extends Popup {
         this._handleFormSubmit = handleFormSubmit;
         this._popupFormElement = this._popupElement.querySelector('.popup__form');
         this._inputList = this._popupElement.querySelectorAll('.popup__form-item');
+        this._button = this._popupElement.querySelector('button[type="submit"]');
     }
 
     _getInputValues() {
@@ -23,6 +24,10 @@ export default class PopupWithForm extends Popup {
     setEventListeners() {
         super.setEventListeners(); 
         this._popupElement.addEventListener('submit', this._submitForm.bind(this)); 
+  }
+
+    setUserForm(isSending) {
+    this._button.textContent = isSending ? 'Загрузка...' : this._buttonDefaultText;
   }
     close() {
         this._popupFormElement.reset();

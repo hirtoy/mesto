@@ -17,16 +17,16 @@
 
 				<main class="content">
 					<section class="profile">
-							<img src="<%=require('./images/jacques-yves_cousteau.png')%>"  alt="Аватар профиля" class="profile__avatar">
+						<div class="profile__avatar-place">
+							<img src="#"  alt="Подождите, загружается" class="profile__avatar">
+							<div class="profile__avatar-overlay"></div>
+						</div>
 							<div class="profile__text">
 									<h1 class="profile__name">Жак-Ив Кусто</h1>
 									<button type="button" class="profile__edit-button"></button>
 								<p class="profile__description">Исследователь океана</p>
 							</div>
-						<button
-							type="button"
-							class="profile__add-button"
-							id="element__add-button"></button>
+						<button class="profile__add-button" type="button" id="element__add-button"></button>
 					</section>
 
 					<section class="elements"></section>
@@ -134,6 +134,35 @@
 			</div>
 		</div>
 
+		<section class="popup" id="avatar-editor">
+			<div class="popup__window">
+				<h2 class="popup__heading">Обновить аватар</h2>
+				<form class="popup__form popup__form_avatar" name="popup-form-avatar" novalidate>
+					<label class="popup__field">
+						<input class="popup__form-item popup__form-item_place_elements popup__form-item_value_place-avatar"
+						    id="input-link"
+							name="avatar"
+							type="url"
+							placeholder="Ссылка на аватарку"
+							equired
+							value="">
+						<span
+						class="popup__form-error link-input-error"
+						id="popup__form-item_place-url"></span>
+					</label>
+					<button
+						class="popup__submit-button popup__profile-submit"
+						type="submit">
+						Сохранить
+					</button>
+				</form>
+				<button
+					type="button"
+					class="popup__close-button"
+					id="profile__editor_close-button"></button>
+			</div>
+		</section>
+
 		<div class="popup popup_place_photos" id="image-viewer">
 			<figure class="figure">
 				<button
@@ -149,6 +178,23 @@
       </figure>
 		</div>
 
+		<section class="popup popup_place_delete">
+			<div class="popup__window">
+				<h2 class="popup__heading">Вы уверены?</h2>
+				<from class="popup__form">
+					<button
+						class="popup__submit-button popup__profile-submit"
+						type="submit">
+						Сохранить
+					</button>
+				</from>
+				<button
+					type="button"
+					class="popup__close-button"
+					id="profile__editor_close-button"></button>
+			</div>
+		</section>
+
 		<template class="template" id="card">
 			<div class="element">
 				<button type="button" class="element__remove-button"></button>
@@ -156,6 +202,7 @@
 				<div class="element__likes-counter">
 					<h2 class="element__title"></h2>
 					<button type="button" class="element__heart-icon"></button>
+					<p class="element__heart-counter"></p>
 				</div>
 			</div>
 		</template>

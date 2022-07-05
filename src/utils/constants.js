@@ -14,8 +14,7 @@ export const imageData = {
 export const profileEditorNode = document.getElementById("profile-editor");
 export const profileNameNode = document.querySelector(".profile__name");
 export const profileDescriptionNode = document.querySelector(".profile__description");
-export const profileAddButtonNode = document.querySelector(".profile__add-button");
-export const profileEditButtonNode = document.querySelector(".profile__edit-button");
+
 export const profileEditorCloseButtonNode = document.querySelector("#profile__editor_close-button");
 
 export const imagePopupNode = document.getElementById("image-viewer");
@@ -33,6 +32,9 @@ export const profileInputDescription = document
 .querySelector(".popup_type_profile")
 .querySelector(".popup__form-item_value_description");
 
+export const editButtonAvatar = document.querySelector(".profile__avatar-overlay");
+export const profileAddButtonNode = document.querySelector(".profile__add-button");
+export const profileEditButtonNode = document.querySelector(".profile__edit-button");
 
 export const popupPlaceEditorNode = document.getElementById("place-editor");
 export const placeEditorCloseButtonNode = document.getElementById("place__editor_close-button");
