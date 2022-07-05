@@ -15,7 +15,7 @@
   .profile__avatar-overlay:hover {
     opacity: .8;
     transition: opacity .2s linear 0s;
-    background-image: url(../../../images/pencil.svg);
+    background-image: url(../../../../images/pencil.png);
     background-repeat: no-repeat;
     background-position: center;
   }
