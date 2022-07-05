@@ -120,9 +120,9 @@ const createCard = (item) => {
 		handleCardClick: (card) => popupWithImage.open(card),
 		handleDelClick: (cardId) => {
 		  popupDelCard.setSubmitAction(() => {
-			api.removeCard(cardId)
+			api.deleteElement(cardId)
 			  .then(() => {
-				card.removeCard();
+				card.deleteElement();
 				popupDelCard.close();
 			  })
 			  .catch(() => {
@@ -131,17 +131,17 @@ const createCard = (item) => {
 		  });
 		  popupDelCard.open();
 		},
-		handleLikeEl: () => {
+		handleLike: () => {
 		  api.addLikeCard(card.getCurrentCard()._id)
 			.then((itemCard) => {
-			  card.handleLike(itemCard);
+			  card.handleLikeElement(itemCard);
 			})
 			.catch(() => console.log("Ошибка постановки лайка"));
 		},
-		handleDelLikeEl: () => {
+		handleDelLike: () => {
 		  api.removeLikeCard(card.getCurrentCard()._id)
 			.then((itemCard) => {
-			  card.handleLike(itemCard);
+			  card.handleLikeElement(itemCard);
 			})
 			.catch(() => console.log("Ошибка снятия лайка"));
 		},
