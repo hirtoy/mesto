@@ -27,7 +27,7 @@
 
 # Ссылка на сайт:
 
-https://github.com/hirtoy/mesto
+https://hirtoy.github.io/mesto/
 
 # Ссылка на макет Figma:
 
