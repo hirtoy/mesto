@@ -1,6 +1,6 @@
 export default class Card { 
-    constructor(data, item, adminInfo, cardSelector, handleCardClick, handleDelClick, handleLike, handleDelLike) { 
-    this._data = data;
+    constructor(item, adminInfo, cardSelector, handleCardClick, handleDelClick, handleLike, handleDelLike) { 
+    this._item = item;
     this._card = item;
     this._likesArr = item.likes;
     this._userId = item.owner._id;
@@ -88,9 +88,9 @@ export default class Card {
       .classList.add("element__heart-icon_active");
   }
 
-    this._elementTitle.textContent = this._data.name;
-    this._elementImage.src = this._data.link;
-    this._elementImage.alt = this._data.name;
+    this._elementTitle.textContent = this._item.name;
+    this._elementImage.src = this._item.link;
+    this._elementImage.alt = this._item.name;
     this._elementHeart.textContent = this._likesArr.length;
 
     this._setEventListners();
