@@ -39,8 +39,7 @@ export default class Card {
   }
 
   _addLike(item) {
-    this._element.querySelector(".element__heart-counter").textContent =
-      item.likes.length;
+    this._element.querySelector(".element__heart-counter").textContent = item.likes.length;
   }
 
   _checkMyLike() {

@@ -34,14 +34,16 @@ import { profileEditButtonNode,
 	profileInputDescription} from "../utils/constants.js";
 
 const api = new Api({
+	
 		address: "https://mesto.nomoreparties.co/v1/cohort-44",
 		token: "497373c8-3f58-4b67-8592-c177fbd661e3"
 	});
 
-const userInfo = new UserInfo({
-	nameProfile: ".profile__name",
-	descriptionProfile: ".profile__description",
-    avatarProfile: ".profile__avatar"});
+const userInfo = new UserInfo(
+	".profile__name",
+	".profile__description",
+    ".profile__avatar"
+	);
 
 //Попап Профиль
 const popupProfile = new PopupWithForm({
@@ -198,3 +200,5 @@ editButtonAvatar.addEventListener("click", () => {
   const formEditAvatar = document.querySelector("#avatar-editor");
   const formEditAvatarValidator = new FormValidator(selectors, formEditAvatar);
   formEditAvatarValidator.enableValidation();
+
+  
