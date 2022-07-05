@@ -36,14 +36,14 @@ import { profileEditButtonNode,
 const api = new Api({
 	
 		address: "https://mesto.nomoreparties.co/v1/cohort-44",
-		token: "497373c8-3f58-4b67-8592-c177fbd661e3"
+		token: "Ly5h3pqkBn6nFes9yVGPYjYPqQH7ezbA"
 	});
 
-const userInfo = new UserInfo(
-	".profile__name",
-	".profile__description",
-    ".profile__avatar"
-	);
+const userInfo = new UserInfo({
+	nameProfile: ".profile__name",
+	avatarProfile: ".profile__avatar",
+	descriptionProfile: ".profile__description"
+});
 
 //Попап Профиль
 const popupProfile = new PopupWithForm({
