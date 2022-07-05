@@ -2,6 +2,7 @@ export default class Card {
     constructor(item, adminInfo, cardSelector, handleCardClick, handleDelClick, handleLike, handleDelLike) { 
     this._item = item;
     this._card = item;
+    this._id = item._id;
     this._likesArr = item.likes;
     this._userId = item.owner._id;
     this._myId = adminInfo._id;
