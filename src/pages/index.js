@@ -58,7 +58,7 @@ profileEditButtonNode.addEventListener('click',() => {
 	formEditProfileValidator.handleAddButtonClick();
 });
 
-let adminInfo;
+ let adminInfo;
 Promise.all([api.getUserProfile(), api.getInitialCards()])
     .then(([objectInfo, cardArr]) => {
 		adminInfo = objectInfo._id;
@@ -77,11 +77,11 @@ popupWithImage.setEventListeners();
 const popupWithAddForm = new PopupWithForm({
 	popupSelector: '#place-editor',
 	handleFormSubmit: (data) => {
-		popupWithAddForm.setUserForm(true);
+		// popupWithAddForm.setUserForm(true);
 
 		api.addNewCard(data)
-		.then((res) => {
-		  cardList.addItemPrepend(createCard(res));
+		.then((itemCard) => {
+		  cardList.addItemPrepend(createCard(itemCard));
 		  popupWithAddForm.close();
 		})
 		.catch((error) => console.log(error))

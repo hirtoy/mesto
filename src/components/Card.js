@@ -1,6 +1,7 @@
 export default class Card { 
-    constructor({ data, adminInfo, cardSelector, handleCardClick, handleDelClick, handleLike, handleDelLike }) { 
-    this._data = data;
+    constructor({ data, adminInfo, handleCardClick, handleDelClick, handleLike, handleDelLike }, cardSelector) { 
+    this._name = data.name;
+    this._link = data.link;
 
     this._card = data;
     this._likes = data.likes;
@@ -52,7 +53,7 @@ export default class Card {
     this._element.remove();
   };
 
-  _setEventListners() {
+  _setEventListeners() {
     this._element
       .querySelector(".element__image")
       .addEventListener("click", () => {
@@ -77,6 +78,7 @@ export default class Card {
   generateCard() { 
     this._element = this._getTemplate(); 
 
+
     this._elementTitle = this._element.querySelector(".element__title");
     this._elementImage = this._element.querySelector(".element__image");
     this._elementRemove = this._element.querySelector("element__remove-button_active");
@@ -90,12 +92,12 @@ export default class Card {
       .classList.add("element__heart-icon_active");
   }
 
-    this._elementTitle.textContent = this._data.name;
-    this._elementImage.src = this._data.link;
-    this._elementImage.alt = this._data.name;
+    this._elementTitle.textContent = this._name;
+    this._elementImage.src = this._link;
+    this._elementImage.alt = this._name;
     this._elementHeart.textContent = this._likes.length;
 
-    this._setEventListners();
+    this._setEventListeners();
 
       return this._element; 
   }; 
