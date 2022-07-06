@@ -3,7 +3,7 @@ export default class Card {
     this._data = data;
 
     this._card = data;
-    this._likesArr = data.likes;
+    this._likes = data.likes;
     this._id = data.owner._id;
     this._adminInfo = adminInfo._id;
 
@@ -27,7 +27,7 @@ export default class Card {
   }
 
   handleLikeElement(item) {
-    this._likesArr = item.likes.length;
+    this._likes = item.likes.length;
     this._addLike(item);
     if (this._checkMyLike()) {
       this._element
@@ -45,7 +45,7 @@ export default class Card {
   }
 
   _checkMyLike() {
-    return Boolean(this._likesArr.find((item) => item._id == this._adminInfo));
+    return Boolean(this._likes.find((item) => item._id == this._adminInfo));
   }
 
   removeCard() { 
@@ -93,7 +93,7 @@ export default class Card {
     this._elementTitle.textContent = this._data.name;
     this._elementImage.src = this._data.link;
     this._elementImage.alt = this._data.name;
-    this._elementHeart.textContent = this._likesArr.length;
+    this._elementHeart.textContent = this._likes.length;
 
     this._setEventListners();
 
