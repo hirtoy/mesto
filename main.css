@@ -46,14 +46,14 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__image/element__image.css ***!
   \***********************************************************************************************************************************************************************/
 .element__image{display:flex;height:282px;width:282px}
+/*!*********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__info/element__info.css ***!
+  \*********************************************************************************************************************************************************************/
+.element__info{align-items:center;display:flex;justify-content:space-between;margin:25px 30px 32px 21px}
 /*!***********************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__title/element__title.css ***!
   \***********************************************************************************************************************************************************************/
-.element__title{font-size:24px;font-style:normal;font-weight:900;line-height:29.05px;margin:25px 0 31px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-/*!***************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__likes-counter/element__likes-counter.css ***!
-  \***************************************************************************************************************************************************************************************/
-.element__likes-counter{display:flex;flex-direction:row;justify-content:space-between;margin:0 auto;max-width:246px}
+.element__title{color:#000;font-family:Inter;font-size:24px;font-weight:900;line-height:29px;margin:0;max-width:195px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__likes-counter/__heart-counter/element__heart-counter.css ***!
   \*******************************************************************************************************************************************************************************************************/
@@ -61,7 +61,7 @@
 /*!*********************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__heart-icon/element__heart-icon.css ***!
   \*********************************************************************************************************************************************************************************/
-.element__heart-icon{align-self:center;background-color:transparent;background-image:url(images/heart-icon.49570bcb1d637fdb38e5.svg);background-repeat:no-repeat;background-size:contain;border:none;height:18.13px;width:20.76px}.element__heart-icon:hover{cursor:pointer;opacity:.5}
+.element__heart-icon{background-color:#fff;background-image:url(images/heart-icon.49570bcb1d637fdb38e5.svg);background-position:50%;background-repeat:no-repeat;background-size:auto;border:none;cursor:pointer;height:25px;width:25px}.element__heart-icon:hover{cursor:pointer;opacity:.5}
 /*!************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__heart-icon/_active/element__heart-icon_active.css ***!
   \************************************************************************************************************************************************************************************************/
