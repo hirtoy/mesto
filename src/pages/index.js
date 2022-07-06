@@ -61,11 +61,9 @@ profileEditButtonNode.addEventListener('click',() => {
 let adminInfo;
 Promise.all([api.getUserProfile(), api.getInitialCards()])
     .then(([objectInfo, cardArr]) => {
-		adminInfo = objectInfo;
+		adminInfo = objectInfo._id;
 		userInfo.setUserInfo(objectInfo);
 		cardList.rendererItems(cardArr);
-		console.log(objectInfo);
-		console.log(cardArr);
 	})
 	.catch((error) => {
 		console.log(error);
@@ -78,13 +76,12 @@ popupWithImage.setEventListeners();
 //Попап Карточки
 const popupWithAddForm = new PopupWithForm({
 	popupSelector: '#place-editor',
-	handleFormSubmit: (item) => {
+	handleFormSubmit: (data) => {
 		popupWithAddForm.setUserForm(true);
 
-		api.addNewCard(item)
-		.then((itemCard) => {
-		  const newCard = createCard(itemCard);
-		  cardList.addItemPrepend(newCard);
+		api.addNewCard(data)
+		.then((res) => {
+		  cardList.addItemPrepend(createCard(res));
 		  popupWithAddForm.close();
 		})
 		.catch((error) => console.log(error))

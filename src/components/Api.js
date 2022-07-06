@@ -76,8 +76,8 @@ export default class Api {
     .then(this._handleResponse)
   }
   // Удаление карточки
-  removeCard(id) {
-    return fetch(`${this._address}/cards/${id}`, {
+  removeCard(_id) {
+    return fetch(`${this._address}/cards/${_id}`, {
       method: 'DELETE',
       headers: {
         authorization: this._token
@@ -86,8 +86,8 @@ export default class Api {
     .then(this._handleResponse)
   }
   // Постановка лайка
-  addLikeCard(id) {
-    return fetch(`${this._address}/cards/likes/${id}`, {
+  addLikeCard(_id) {
+    return fetch(`${this._address}/cards/likes/${_id}`, {
       method: 'PUT',
       headers: {
         authorization: this._token
@@ -96,8 +96,8 @@ export default class Api {
     .then(this._handleResponse)
   }
   // Снятие лайка
-  removeLikeCard(id) {
-    return fetch(`${this._address}/cards/likes/${id}`, {
+  removeLikeCard(_id) {
+    return fetch(`${this._address}/cards/likes/${_id}`, {
       method: 'DELETE',
       headers: {
         authorization: this._token
