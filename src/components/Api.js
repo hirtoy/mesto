@@ -68,7 +68,10 @@ export default class Api {
         authorization: this._token,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify({
+        name: data.name,
+        link: data.link
+      })
     })
     .then(this._handleResponse)
   }
