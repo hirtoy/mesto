@@ -4,8 +4,8 @@ export default class Card {
     this._card = item;
     this._id = item._id;
     this._likesArr = item.likes;
-    this._userId = item.owner._id;
-    this._myId = adminInfo._id;
+    this._owner = item.owner._id;
+    this._adminInfo = adminInfo._id;
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
     this._handleDelClick = handleDelClick;
@@ -44,7 +44,7 @@ export default class Card {
   }
 
   _checkMyLike() {
-    return Boolean(this._likesArr.find((item) => item._id == this._myId));
+    return Boolean(this._likesArr.find((item) => item._id == this._adminInfo));
   }
 
   deleteElement() { 
@@ -81,7 +81,7 @@ export default class Card {
     this._elementRemove = this._element.querySelector("element__remove-button_active");
     this._elementHeart = this._element.querySelector(".element__heart-counter");
 
-    if (this._userId == this._myId)
+    if (this._owner == this._adminInfo)
     this._elementRemove.classList.add("element__remove-button_active");
     if (this._checkMyLike()) {
     this._element
