@@ -4,8 +4,8 @@ export default class Card {
     this._card = item;
     this._id = item._id;
     this._likesArr = item.likes;
-    this._userId = item.owner.this._id;
-    this._myId = adminInfo.this._id;
+    this._userId = item.owner._id;
+    this._myId = adminInfo._id;
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
     this._handleDelClick = handleDelClick;
