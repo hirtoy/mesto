@@ -83,14 +83,15 @@ const popupWithAddForm = new PopupWithForm({
 
 		api.addNewCard(item)
 		.then((itemCard) => {
-			const newCard = createCard(itemCard);
-			cardList.addItemPrepend(newCard);
-			popupWithAddForm.close();
+		  const newCard = createCard(itemCard);
+		  cardList.addItemPrepend(newCard);
+		  popupWithAddForm.close();
 		})
 		.catch((error) => console.log(error))
 		.finally(() => popupWithAddForm.setUserForm(false));
 	},
-});
+  });
+
 popupWithAddForm.setEventListeners();
 
 profileAddButtonNode.addEventListener("click", () => {
