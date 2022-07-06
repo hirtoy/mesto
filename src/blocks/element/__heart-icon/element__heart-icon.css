@@ -1,12 +1,13 @@
 .element__heart-icon {
+	width: 25px;
+height: 25px;
+border: none;
+cursor: pointer;
+background-color: #fff;
 	background-image: url(../../../images/heart-icon.svg);
-	background-size: contain;
+	background-position: 50%;
+	background-size: auto;
 	background-repeat: no-repeat;
-	width: 20.76px;
-	height: 18.13px;
-	align-self: center;
-	border: none;
-	background-color: transparent;
 }
 
 .element__heart-icon:hover {

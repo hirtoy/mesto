@@ -61,7 +61,7 @@ profileEditButtonNode.addEventListener('click',() => {
  let adminInfo;
 Promise.all([api.getUserProfile(), api.getInitialCards()])
     .then(([objectInfo, cardArr]) => {
-		adminInfo = objectInfo._id;
+		adminInfo = objectInfo;
 		userInfo.setUserInfo(objectInfo);
 		cardList.rendererItems(cardArr);
 	})
@@ -101,7 +101,7 @@ const createCard = (item) => {
 	const card = new Card({
 		item: item,
 		adminInfo: adminInfo,
-		cardSelector: "#card",
+		cardSelector: ".template",
 		handleCardClick: (card) => popupWithImage.open(card),
 		handleDelClick: (cardId) => {
 		  popupDelCard.setSubmitAction(() => {
@@ -116,17 +116,17 @@ const createCard = (item) => {
 		  });
 		  popupDelCard.open();
 		},
-		handleLike: () => {
+		handleLikeEl: () => {
 		  api.addLikeCard(card.getCurrentCard()._id)
 			.then((itemCard) => {
-			  card.handleLikeElement(itemCard);
+			  card.handleLike(itemCard);
 			})
 			.catch(() => console.log("Ошибка постановки лайка"));
 		},
-		handleDelLike: () => {
+		handleDelLikeEl: () => {
 		  api.removeLikeCard(card.getCurrentCard()._id)
 			.then((itemCard) => {
-			  card.handleLikeElement(itemCard);
+			  card.handleLike(itemCard);
 			})
 			.catch(() => console.log("Ошибка снятия лайка"));
 		},
