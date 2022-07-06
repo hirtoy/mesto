@@ -47,7 +47,7 @@ export default class Card {
     return Boolean(this._likesArr.find((item) => item._id == this._adminInfo));
   }
 
-  deleteElement() { 
+  removeCard() { 
     this._element.remove();
   };
 

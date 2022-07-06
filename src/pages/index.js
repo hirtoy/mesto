@@ -11,27 +11,14 @@ import Api from '../components/Api';
 import PopupWithConfirmation from '../components/PopupWithConfirmation';
 
 import { profileEditButtonNode,
-	profileNameNode,
 	popupNameInput,
-	profileDescriptionNode,
 	popupDescriptionInput,
-	placeName,
-	placeUrl,
-	placeEditorCloseButtonNode,
-	imageViewerCloseButtonNode,
 	profileAddButtonNode,
-	submitElementBtn,
-	profileEditorCloseButtonNode,
-	addForm,
-	editForm,
-	popupPlaceEditorNode,
 	popupPhotoSelector,
 	selectors,
-	elementCard,
 	elements,
     editButtonAvatar,
-	profileInputName,
-	profileInputDescription} from "../utils/constants.js";
+	} from "../utils/constants.js";
 
 const api = new Api({
 		address: "https://mesto.nomoreparties.co/v1/cohort-44",
@@ -120,9 +107,9 @@ const createCard = (item) => {
 		handleCardClick: (card) => popupWithImage.open(card),
 		handleDelClick: (cardId) => {
 		  popupDelCard.setSubmitAction(() => {
-			api.deleteElement(cardId)
+			api.removeCard(cardId)
 			  .then(() => {
-				card.deleteElement();
+				card.removeCard();
 				popupDelCard.close();
 			  })
 			  .catch(() => {
@@ -182,9 +169,9 @@ popupAvatar.setEventListeners();
 
 editButtonAvatar.addEventListener("click", () => {
 	popupAvatar.open();
-
 	formEditAvatarValidator.handleAddButtonClick();
 });
+
 
 
   const formEditProfile = document.querySelector("#profile-editor");
