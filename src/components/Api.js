@@ -12,7 +12,7 @@ export default class Api {
   }
 
   // Загрузка информации о пользователе с сервера
-  async getUserProfile() {
+  getUserProfile() {
     const res = await fetch(`${this._address}/users/me`, {
       method: 'GET',
       headers: {
@@ -22,7 +22,7 @@ export default class Api {
     return this._handleResponse(res);
   }
   // Редактирование профиля
-  async setUserProfile(data) {
+   setUserProfile(data) {
     const res = await fetch(`${this._address}/users/me`, {
       method: 'PATCH',
       headers: {
@@ -37,7 +37,7 @@ export default class Api {
     return this._handleResponse(res);
   }
   // Обновление аватара пользователя
-  async editUserAvatar(data) {
+   editUserAvatar(data) {
     const res = await fetch(`${this._address}/users/me/avatar`, {
       method: 'PATCH',
       headers: {
@@ -51,7 +51,7 @@ export default class Api {
     return this._handleResponse(res);
   }
   // Загрузка карточек с сервера
-  async getInitialCards() {
+   getInitialCards() {
     const res = await fetch(`${this._address}/cards`, {
       method: 'GET',
       headers: {
@@ -61,7 +61,7 @@ export default class Api {
     return this._handleResponse(res);
   }
   // Добавление новой карточки
-  async addNewCard(data) {
+   addNewCard(data) {
     const res = await fetch(`${this._address}/cards`, {
       method: 'POST',
       headers: {
@@ -76,7 +76,7 @@ export default class Api {
     return this._handleResponse(res);
   }
   // Удаление карточки
-  async removeCard(id) {
+  removeCard(id) {
     const res = await fetch(`${this._address}/cards/${id}`, {
       method: 'DELETE',
       headers: {
@@ -86,7 +86,7 @@ export default class Api {
     return this._handleResponse(res);
   }
   // Постановка лайка
-  async addLikeCard(id) {
+   addLikeCard(id) {
     const res = await fetch(`${this._address}/cards/likes/${id}`, {
       method: 'PUT',
       headers: {
@@ -96,7 +96,7 @@ export default class Api {
     return this._handleResponse(res);
   }
   // Снятие лайка
-  async removeLikeCard(id) {
+   removeLikeCard(id) {
     const res = await fetch(`${this._address}/cards/likes/${id}`, {
       method: 'DELETE',
       headers: {
