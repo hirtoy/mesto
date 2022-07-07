@@ -133,11 +133,11 @@
 /*!*********************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__window/popup__window.css ***!
   \*********************************************************************************************************************************************************************/
-.popup__window{background:#fff;border-radius:10px;left:50%;max-width:430px;position:fixed;top:50%;transform:translate(-50%,-50%);width:100%}
+.popup__window{background-color:#fff;border-radius:10px;bottom:50%;box-sizing:border-box;padding-top:34px;position:fixed;right:50%;transform:translate(50%,50%);width:430px}
 /*!***********************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__heading/popup__heading.css ***!
   \***********************************************************************************************************************************************************************/
-.popup__heading{font-family:Inter,Arial,sans-serif;font-size:24px;font-weight:700;line-height:1.2;margin:34px 36px 54px}
+.popup__heading{color:#000;display:block;font-family:Inter;font-size:24px;font-weight:900;line-height:29px;margin:0;padding:0 64px 36px 36px}
 /*!*********************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__heading/_place/popup__heading_place_elements.css ***!
   \*********************************************************************************************************************************************************************************************/
@@ -165,11 +165,11 @@
 /*!***********************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__submit-button/popup__submit-button.css ***!
   \***********************************************************************************************************************************************************************************/
-.popup__submit-button{background:#000;border-radius:2px;color:#fff;cursor:pointer;display:block;font-family:Inter,Arial,sans-serif;font-size:14px;font-style:normal;font-weight:400;line-height:16.94px;margin-top:18px;min-height:50px;text-align:center;width:100%}.popup__submit-button:disabled{background:#fff;border:1px solid #000;color:#000;opacity:.2;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.popup__submit-button:hover{background:rgba(0,0,0,.8);color:#fff;opacity:.8;transition:opacity .5s linear}
+.popup__submit-button{background-color:#000;border:1px solid #000;border-radius:2px;color:#fff;cursor:pointer;display:block;font-family:Inter,Arial,sans-serif;font-size:18px;font-style:normal;height:50px;line-height:22px;margin:auto;width:358px}.popup__submit-button:disabled{background:#fff;border:1px solid #000;color:#000;opacity:.2;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.popup__submit-button:hover{background:rgba(0,0,0,.8);color:#fff;opacity:.8;transition:opacity .5s linear}
 /*!*****************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__form/popup__form.css ***!
   \*****************************************************************************************************************************************************************/
-.popup__form{border:0;font-family:Inter,Arial,sans-serif;margin:0 36px 36px;max-width:430px;padding:0}
+.popup__form{display:flex;flex-direction:column;font-family:Inter,Arial,sans-serif;padding:0 36px 36px}
 /*!***************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__form-item/popup__form-item.css ***!
   \***************************************************************************************************************************************************************************/
