@@ -1,7 +1,7 @@
 export default class Api {
-  constructor({address, token}) {
-    this._address = address;
-    this._token = token;
+  constructor(options) {
+    this._url = options.url;
+    this._headers = options.headers;
 }
 
   _handleResponse(res) {
@@ -13,96 +13,77 @@ export default class Api {
 
   // Загрузка информации о пользователе с сервера
   getUserProfile() {
-    return fetch(`${this._address}/users/me`, {
+    return fetch(`${this._url}/users/me`, {
       method: 'GET',
-      headers: {
-        authorization: this._token
-      }
+      headers: this._headers
     })
     .then(this._handleResponse)
   }
   // Редактирование профиля
   setUserProfile(data) {
-    return fetch(`${this._address}/users/me`, {
+    return fetch(`${this._url}/users/me`, {
       method: 'PATCH',
-      headers: {
-        authorization: this._token,
-        'Content-Type': 'application/json'
-      },
+      headers: this._headers,
       body: JSON.stringify({
         name: data.name,
         about: data.about
       })
     })
-    .then(this._handleResponse)
+    .then((res) => this._handleResponse(res));
   }
   // Обновление аватара пользователя
   editUserAvatar(data) {
-    return fetch(`${this._address}/users/me/avatar`, {
+    return fetch(`${this._url}/users/me/avatar`, {
       method: 'PATCH',
-      headers: {
-        authorization: this._token,
-        'Content-Type': 'application/json'
-      },
+      headers: this._headers,
       body: JSON.stringify({
         avatar: data.avatar,
       })
     })
-    .then(this._handleResponse)
+    .then((res) => this._handleResponse(res));
   }
   // Загрузка карточек с сервера
   getInitialCards() {
-    return fetch(`${this._address}/cards`, {
+    return fetch(`${this._url}/cards`, {
       method: 'GET',
-      headers: {
-        authorization: this._token
-      }
+      headers: this._headers
     })
-    .then(this._handleResponse)
+    .then((res) => this._handleResponse(res));
   }
   // Добавление новой карточки
   addNewCard(data) {
-    return fetch(`${this._address}/cards`, {
+    return fetch(`${this._url}/cards`, {
       method: 'POST',
-      headers: {
-        authorization: this._token,
-        'Content-Type': 'application/json'
-      },
+      headers: this._headers,
       body: JSON.stringify({
         name: data.name,
         link: data.link,
       })
     })
-    .then(this._handleResponse)
+    .then((res) => this._handleResponse(res));
   }
   // Удаление карточки
   removeCard(_id) {
-    return fetch(`${this._address}/cards/${_id}`, {
+    return fetch(`${this._url}/cards/${_id}`, {
       method: 'DELETE',
-      headers: {
-        authorization: this._token
-      }
+      headers: this._headers
     })
-    .then(this._handleResponse)
+    .then((res) => this._handleResponse(res));
   }
   // Постановка лайка
   addLikeCard(_id) {
-    return fetch(`${this._address}/cards/likes/${_id}`, {
+    return fetch(`${this._url}/cards/likes/${_id}`, {
       method: 'PUT',
-      headers: {
-        authorization: this._token
-      }
+      headers: this._headers
     })
-    .then(this._handleResponse)
+    .then((res) => this._handleResponse(res));
   }
   // Снятие лайка
   removeLikeCard(_id) {
-    return fetch(`${this._address}/cards/likes/${_id}`, {
+    return fetch(`${this._url}/cards/likes/${_id}`, {
       method: 'DELETE',
-      headers: {
-        authorization: this._token
-      }
+      headers: this._headers
     })
-    .then(this._handleResponse)
+    .then((res) => this._handleResponse(res));
   }
 }
