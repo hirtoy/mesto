@@ -22,9 +22,9 @@ export default class FormValidator {
 	}; 
 
 //Добавление функции disabled
-	handleAddButtonClick() {
-		 this._submitButton.setAttribute("disabled", true); 
-	} 
+	// handleAddButtonClick() {
+	// 	 this._submitButton.setAttribute("disabled", true); 
+	// } 
 
 	//функция добавляет обработчики сразу всем полям формы 
 	_setEventListeners() { 
@@ -70,9 +70,9 @@ export default class FormValidator {
 	} 
  
 	//Функция сброса ошибок 
-	restartFormValidation() { 
-	  this._inputList.forEach((inputElement) => {
-		this._toggleButtonState();
+	restartFormValidation() {
+	this._toggleButtonState();
+	this._inputList.forEach((inputElement) => {
 		this._hideInputError(inputElement);
 	  });
 	}

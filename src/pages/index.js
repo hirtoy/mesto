@@ -38,9 +38,9 @@ const userInfo = new UserInfo({
 const popupProfile = new PopupWithForm({
 	popupSelector:'.popup_type_profile',
 	handleFormSubmit: (data) => {
-
-		api.setUserProfile(data)
-		   .then((dataInfo) => {
+        popupProfile.showLoadingStatus(true)
+        api.setUserProfile(data)
+           .then((dataInfo) => {
 			userInfo.setUserInfo(dataInfo);
 			popupProfile.close();
 		   })
@@ -52,12 +52,11 @@ popupProfile.setEventListeners();
 
 //слушатель для профиля
 profileEditButtonNode.addEventListener('click',() => {
+	formEditProfileValidator.restartFormValidation();
 	const userData = userInfo.getUserInfo();  
 	popupNameInput.value = userData.name;  
 	popupDescriptionInput.value = userData.about; 
 	popupProfile.open(); 
-	
-	formEditProfileValidator.handleAddButtonClick();
 });
 
  let adminInfo = '';
@@ -79,7 +78,7 @@ popupWithImage.setEventListeners();
 const popupWithAddForm = new PopupWithForm({
 	popupSelector: '#place-editor',
 	handleFormSubmit: (data) => {
-
+		popupWithAddForm.showLoadingStatus(true)
 		api.addNewCard(data)
 		.then((item) => {
 		  cardList.addItemPrepend(createCard(item));
@@ -94,7 +93,7 @@ popupWithAddForm.setEventListeners();
 
 profileAddButtonNode.addEventListener("click", () => {
 	popupWithAddForm.open();
-	formAddCardValidator.handleAddButtonClick();
+	formAddCardValidator.restartFormValidation();
 });
 
 //Функция создания карточек
@@ -157,7 +156,7 @@ const popupDelCard = new PopupWithConfirmation({
 const popupAvatar = new PopupWithForm({
 	popupSelector: "#avatar-editor",
 	handleFormSubmit: (data) => {
-		// popupAvatar.setUserForm(true);
+		popupAvatar.showLoadingStatus(true)
 		
 		api.editUserAvatar(data)
 		  .then((objectInfo) => {
@@ -172,10 +171,8 @@ popupAvatar.setEventListeners();
 
 editButtonAvatar.addEventListener("click", () => {
 	popupAvatar.open();
-	formEditAvatarValidator.handleAddButtonClick();
+	formEditAvatarValidator.restartFormValidation();
 });
-
-
 
   const formEditProfile = document.querySelector("#profile-editor");
   const formEditProfileValidator = new FormValidator(selectors, formEditProfile, profileAddButtonNode);
@@ -188,5 +185,3 @@ editButtonAvatar.addEventListener("click", () => {
   const formEditAvatar = document.querySelector("#avatar-editor");
   const formEditAvatarValidator = new FormValidator(selectors, formEditAvatar);
   formEditAvatarValidator.enableValidation();
-
-  

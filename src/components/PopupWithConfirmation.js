@@ -30,9 +30,9 @@ export default class PopupWithConfirmation extends Popup {
 
   showLoadingStatus(isLoading, buttonText='Да') {
     if(isLoading) {
-        this._confirmButton.textContent = buttonText;
-    } else {
         this._confirmButton.textContent = 'Удаление...';
+    } else {
+        this._confirmButton.textContent = buttonText;
     }
 }
 }

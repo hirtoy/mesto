@@ -1,5 +1,5 @@
 export default class Card { 
-constructor({ item, adminInfo, cardSelector, handleCardClick, handleDelClick, handleLikeEl, handleDelLikeEl }) {
+constructor({ item, adminInfo, cardSelector, handleCardClick, handleDelClick, handleLikeEl }) {
   this._name = item.name;
   this._link = item.link;
   this._likesArr = item.likes;
@@ -23,9 +23,9 @@ _getTemplate() {
 
 _handleLike() {
   if(this._likesArr.length !== 0) {
-      this._element.querySelector('.element__heart-counter').textContent = this._likesArr.length;
+    this._likeButton.textContent = this._likesArr.length;
   } else {
-      this._element.querySelector('.element__heart-counter').textContent = '0';
+    this._likeButton.textContent = '0';
     }
   this._likesArr.forEach((like) => {
     if(like._id === this._myId) {
@@ -37,9 +37,9 @@ _handleLike() {
 updateLikes(likes) {
   this._likesEl.classList.toggle('element__heart-icon_active');
   if(likes !== 0) {
-      this._element.querySelector('.element__heart-counter').textContent = likes;
+    this._likeButton.textContent = likes;
   } else {
-      this._element.querySelector('.element__heart-counter').textContent = '0';
+    this._likeButton.textContent = '0';
   }
 }
 
@@ -69,10 +69,12 @@ generateCard() {
   this._elementImage = this._element.querySelector(".element__image");
   this._likesEl = this._element.querySelector(".element__heart-icon");
   this._delButton = this._element.querySelector(".element__remove-button");
+  this._likeButton = this._element.querySelector('.element__heart-counter');
+      
 
   this._elementTitle.textContent = this._name;
   this._elementImage.src = this._link;
-  this._elementImage.alt = `Это ${this._name}? Введите корректную ссылку.`;
+  this._elementImage.alt = `Это ${this._name? this._name : 'Введите корректную ссылку' }`;
 
 
   this._setEventListeners();
