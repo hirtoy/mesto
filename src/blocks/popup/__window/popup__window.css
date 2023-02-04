@@ -1,0 +1,11 @@
+.popup__window {
+    width: 430px;
+    padding-top: 34px;
+    position: fixed;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%,50%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+}

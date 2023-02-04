@@ -1,0 +1,9 @@
+.page {
+	color: white;
+	min-width: 320px;
+	height: 100%;
+	box-sizing: border-box;
+	font-family: "Inter", Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: antialiased;
+}
